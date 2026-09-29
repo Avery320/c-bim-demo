@@ -4,7 +4,7 @@ This public repository contains generated deployment artifacts for C-BIM. The
 private source repository builds and publishes `site/`; source code, tests,
 project history, and source maps are not mirrored here.
 
-Demo IFC models available from the hosted application are stored in `ifc/`.
+Demo IFC models available from the hosted application are stored in `ifc-test/`.
 Adding or removing an `.ifc` file there updates the application catalog without
 a source-code change.
 
