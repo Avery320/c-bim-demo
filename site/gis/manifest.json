@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "id": "c8e465209aaabc5daf4a",
+  "id": "ccf51f336ebd6606aa40",
   "categories": {
     "basemap": "Basemap layers",
     "land-use": "土地使用 Land Use",
@@ -9,7 +9,8 @@
     "environment": "環境 Environment",
     "waste": "廢棄物 Waste",
     "geology": "地質 Geology",
-    "administrative": "行政區 Administrative"
+    "administrative": "行政區 Administrative",
+    "transport": "交通 Transport"
   },
   "topics": {
     "openfreemap": {
@@ -39,7 +40,12 @@
     },
     "wra-reservoir-water": {
       "directory": "water/reservoirs",
-      "label": "水庫集水區／壩體",
+      "label": "水庫集水區 Reservoir Catchments",
+      "delivery": "local"
+    },
+    "wra-reservoir-water-dam": {
+      "directory": "water/reservoirs",
+      "label": "水庫壩體 Reservoir Dams",
       "delivery": "local"
     },
     "tw-detention-basins": {
@@ -121,9 +127,831 @@
       "directory": "administrative/counties",
       "label": "縣市界 Counties",
       "delivery": "local"
+    },
+    "nlsc-thsr-stations": {
+      "directory": "transport/thsr-stations",
+      "label": "高鐵站 THSR Stations",
+      "delivery": "local"
+    },
+    "nlsc-tra-stations": {
+      "directory": "transport/tra-stations",
+      "label": "臺鐵站 TRA Stations",
+      "delivery": "local"
+    },
+    "nlsc-highways": {
+      "directory": "transport/highways",
+      "label": "國道 Highways",
+      "delivery": "local"
+    },
+    "nlsc-expressways": {
+      "directory": "transport/expressways",
+      "label": "快速道路 Expressways",
+      "delivery": "local"
+    },
+    "nlsc-tra-routes": {
+      "directory": "transport/tra-routes",
+      "label": "臺灣鐵路 Taiwan Rail Routes",
+      "delivery": "local"
+    },
+    "nlsc-thsr-routes": {
+      "directory": "transport/thsr-routes",
+      "label": "高鐵路線 THSR Routes",
+      "delivery": "local"
+    },
+    "fanca-wildlife-protected-areas": {
+      "directory": "environment/wildlife-protected-areas",
+      "label": "野生動物保護區 Wildlife Protected Areas",
+      "delivery": "local"
+    },
+    "fanca-ecological-focus-areas": {
+      "directory": "environment/ecological-network-focus-areas",
+      "label": "國土生態綠網關注區域 Ecological Network Focus Areas",
+      "delivery": "local"
+    },
+    "fanca-ecological-corridors": {
+      "directory": "environment/ecological-conservation-corridors",
+      "label": "國土生態綠網區域保育軸帶 Ecological Conservation Corridors",
+      "delivery": "local"
+    },
+    "fanca-natural-vegetation": {
+      "directory": "environment/natural-vegetation",
+      "label": "天然植群圖 Natural Vegetation",
+      "delivery": "local"
     }
   },
   "datasets": {
+    "nlsc-thsr-stations": {
+      "topic": "nlsc-thsr-stations",
+      "file": "transport/thsr-stations/thsr-stations.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/7a95cfc5-4e86-44dc-894d-b3bd6b0c83ae/MARK_%E9%AB%98%E9%90%B5%E8%BB%8A%E7%AB%99_1101208_.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "a08906e1e92b3125f59fb58eb77b6be2a6a74c514f68e251815dc5b81acf0c8c",
+      "bytes": 4782,
+      "featureCount": 12,
+      "analysis": {
+        "datasetId": "nlsc-thsr-stations",
+        "geometryTypes": [
+          "Point"
+        ],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "A0000007600",
+              "A0000013098",
+              "B0000001219",
+              "D0000004608",
+              "E0000000231",
+              "F0000013911",
+              "H0000003613",
+              "J0000002120",
+              "K0000001241",
+              "N0000004776",
+              "P0000001965",
+              "Q0000001876"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台灣高鐵嘉義站",
+              "台灣高鐵左營車站",
+              "台灣高鐵彰化車站",
+              "台灣高鐵臺中車站",
+              "台灣高鐵臺南站",
+              "台灣高鐵苗栗站",
+              "臺灣高鐵南港車站",
+              "臺灣高鐵新竹車站",
+              "臺灣高鐵板橋車站",
+              "臺灣高鐵桃園車站",
+              "臺灣高鐵臺北車站",
+              "雲林高鐵站"
+            ]
+          },
+          "alternate_name": {
+            "type": "string",
+            "values": [
+              "雲林高鐵站",
+              "高鐵南港站",
+              "高鐵嘉義站",
+              "高鐵左營站",
+              "高鐵彰化站",
+              "高鐵新竹站",
+              "高鐵板橋站",
+              "高鐵桃園站",
+              "高鐵臺中站",
+              "高鐵臺北站",
+              "高鐵臺南站",
+              "高鐵苗栗站"
+            ]
+          },
+          "address": {
+            "type": "string",
+            "values": [
+              "嘉義縣太保市高鐵西路168號",
+              "彰化縣田中鎮站區路二段99號",
+              "新北市板橋區縣民大道二段7號",
+              "新竹縣竹北市高鐵七路6號",
+              "桃園市中壢區高鐵北路一段6號",
+              "臺中市烏日區站區二路8號",
+              "臺北市北平西路3號",
+              "臺北市南港區南港路一段313號",
+              "臺南市歸仁區歸仁大道100號",
+              "苗栗縣後龍鎮高鐵三路268號",
+              "雲林縣虎尾鎮站前東路301號",
+              "高雄市左營區高鐵路105號"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string",
+            "values": [
+              "201208",
+              "201310",
+              "201608",
+              "201806",
+              "201811",
+              "201907",
+              "201908",
+              "201911",
+              "202001",
+              "202012",
+              "202109"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "高鐵"
+            ]
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "A0000007600",
+              "A0000013098",
+              "B0000001219",
+              "D0000004608",
+              "E0000000231",
+              "F0000013911",
+              "H0000003613",
+              "J0000002120",
+              "K0000001241",
+              "N0000004776",
+              "P0000001965",
+              "Q0000001876"
+            ]
+          },
+          "telephone": {
+            "type": "string",
+            "values": [
+              "02-40663000",
+              "4066-3000"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73225"
+    },
+    "nlsc-tra-stations": {
+      "topic": "nlsc-tra-stations",
+      "file": "transport/tra-stations/tra-stations.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/50508007-F7C7-482B-9959-D178561A0945/resource/6D00CEF8-C64A-4AF4-BF53-94456C6895E8/download",
+      "importedAt": "2026-10-09",
+      "sha256": "ee42334c38d41aa895334ec1ffff6d87a79ff21aca7b524c33f51d82d4fac26e",
+      "bytes": 98746,
+      "featureCount": 248,
+      "analysis": {
+        "datasetId": "nlsc-tra-stations",
+        "geometryTypes": [
+          "Point"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "alternate_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "臺鐵"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73226"
+    },
+    "nlsc-tra-routes": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+      "importedAt": "2026-10-09",
+      "sha256": "b06238a6e6ba712b21425928363f75414b5e9ebb5f6d8e8cd54743bb0663bf3c",
+      "bytes": 960976,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220",
+      "analysis": {
+        "datasetId": "nlsc-tra-routes-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "臺鐵五堵貨場",
+              "臺鐵內灣線",
+              "臺鐵六家線",
+              "臺鐵北迴線",
+              "臺鐵南迴線",
+              "臺鐵宜蘭線",
+              "臺鐵屏東線",
+              "臺鐵平溪線",
+              "臺鐵成追線",
+              "臺鐵沙崙線",
+              "臺鐵海岸線(海線)",
+              "臺鐵深澳線",
+              "臺鐵縱貫線(北段)",
+              "臺鐵縱貫線(南段)",
+              "臺鐵縱貫線(海線)",
+              "臺鐵縱貫線南段",
+              "臺鐵臺中線(山線)",
+              "臺鐵臺中臨港線",
+              "臺鐵臺東線",
+              "臺鐵舊山線",
+              "臺鐵花蓮臨港線",
+              "臺鐵集集線",
+              "阿里山林業鐵路眠月線",
+              "阿里山林業鐵路祝山線",
+              "阿里山林業鐵路神木線",
+              "阿里山林業鐵路阿里山線"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "臺灣鐵路"
+            ]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nlsc-tra-routes-by-county": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "2f9d243e79d6016fb3a7c4e0e2a4e21a6a1a1f3a104874273ec826a552c1e3b2",
+      "bytes": 996124,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-thsr-routes": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "94bc06e38b0f59caee51ca9eb694432cc13fb54dffa350737f1d8a3891357a89",
+      "bytes": 143130,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221",
+      "analysis": {
+        "datasetId": "nlsc-thsr-routes-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台灣高速鐵路",
+              "台灣高鐵中部烏日基地",
+              "台灣高鐵嘉義太保基地",
+              "台灣高鐵新竹六家基地"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "高鐵"
+            ]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string",
+            "values": [
+              "201608",
+              "201811",
+              "201908",
+              "201911",
+              "202001",
+              "202106",
+              "202107",
+              "202111",
+              "202112",
+              "202201",
+              "202208",
+              "202212",
+              "202302",
+              "202311",
+              "202401"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nlsc-thsr-routes-by-county": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "79235e37dd947b57376ddd9aa62d1a861d8e5fb2dc51030d6be7b72f9ed8cc4f",
+      "bytes": 154239,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-highways": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "d3c3e55861fcd8fd45de0f2bade8e789c3eb9730883cffed518968f7ad41412f",
+      "bytes": 1857765,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232",
+      "analysis": {
+        "datasetId": "nlsc-highways-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "國1",
+              "國10",
+              "國2",
+              "國2甲",
+              "國3",
+              "國3甲",
+              "國4",
+              "國5",
+              "國6",
+              "國8"
+            ]
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義市",
+              "嘉義縣",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": [
+              "HU",
+              "HW"
+            ]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": [
+              "國道",
+              "國道附屬道路"
+            ]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": [
+              "9420101",
+              "9420102",
+              "9421001",
+              "9440100",
+              "9440202"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nlsc-highways-by-county": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "40d61964cedf87076b5843fb79adb4467e4a7fa0da756b67448dc167cb296909",
+      "bytes": 1885511,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-expressways": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "88ff27804cfc346b3b76eb502cacee6b27f3caeb4780653a6cbf73c8d13719df",
+      "bytes": 1052200,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232",
+      "analysis": {
+        "datasetId": "nlsc-expressways-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "台61",
+              "台62",
+              "台62甲",
+              "台64",
+              "台65",
+              "台66",
+              "台68",
+              "台68甲",
+              "台72",
+              "台74",
+              "台76",
+              "台78",
+              "台82",
+              "台84",
+              "台86",
+              "台88"
+            ]
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義縣",
+              "基隆市",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": [
+              "1E"
+            ]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": [
+              "省道快速公路"
+            ]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": [
+              "9420202",
+              "9421001",
+              "9440100",
+              "9440202"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string",
+            "values": [
+              "一段",
+              "三段",
+              "二段"
+            ]
+          }
+        }
+      }
+    },
+    "nlsc-expressways-by-county": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "d1370b7d5c9e090971df44eab4ba8d7ec35891a514413a25814993f4f8246afa",
+      "bytes": 1069715,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-wildlife-protected-areas": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+      "importedAt": "2026-10-09",
+      "sha256": "a4b13e506b433a704b28998c2a6a4964ad768a59b09ed5b046883d435a554f89",
+      "bytes": 244804,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162",
+      "analysis": {
+        "datasetId": "fanca-wildlife-protected-areas-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "WR02",
+              "WR03",
+              "WR04",
+              "WR05",
+              "WR07",
+              "WR09",
+              "WR10",
+              "WR11",
+              "WR13",
+              "WR14",
+              "WR15",
+              "WR16",
+              "WR17",
+              "WR18",
+              "WR19",
+              "WR21"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台南縣曾文溪口北岸黑面琵鷺動物保護區",
+              "台東縣海端鄉新武呂溪魚類保護區",
+              "大肚溪口野生動物保護區",
+              "宜蘭縣雙連埤野生動物保護區",
+              "新竹市濱海野生動物保護區",
+              "桃園高榮野生動物保護區",
+              "櫻花鉤吻鮭野生動物保護區",
+              "無尾港水鳥保護區",
+              "玉里野生動物保護區",
+              "翡翠水庫食蛇龜野生動物保護區",
+              "臺北市野雁保護區",
+              "臺南市四草野生動物保護區",
+              "蘭陽溪口水鳥保護區",
+              "馬祖列島雌光螢野生動物保護區",
+              "高美野生動物保護區",
+              "高雄市那瑪夏區楠梓仙溪野生動物保護區"
+            ]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "宜蘭縣政府",
+              "新竹市政府",
+              "林業及自然保育署宜蘭分署",
+              "林業及自然保育署花蓮分署",
+              "桃園市政府",
+              "臺中市政府",
+              "臺中市政府及彰化縣政府",
+              "臺北市政府",
+              "臺南市政府",
+              "臺東縣政府",
+              "連江縣政府",
+              "高雄市政府"
+            ]
+          },
+          "established_date": {
+            "type": "string",
+            "values": [
+              "1993-05-26",
+              "1993-09-24",
+              "1993-11-19",
+              "1994-11-30",
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2001-06-08",
+              "2002-11-01",
+              "2003-11-07",
+              "2004-09-29",
+              "2012-03-03",
+              "2022-05-03",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "announcement_date": {
+            "type": "string",
+            "values": [
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2002-11-01",
+              "2003-11-07",
+              "2007-09-29",
+              "2012-06-22",
+              "2015-06-23",
+              "2017-03-21",
+              "2019-04-23",
+              "2020-04-22",
+              "2022-05-03",
+              "2025-06-30",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "-",
+              "109年10月19日更新",
+              "111年5月12日更新",
+              "111年8月16日更新",
+              "111年8月16日更新(面積待修正公告)",
+              "114年6月30日更新",
+              "114年7月11日更新",
+              "114年7月22日更新",
+              "（待更新）"
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "核心保育區",
+              "核心區",
+              "永續利用區",
+              "緩衝區",
+              "緩衝區A",
+              "緩衝區B",
+              "緩衝區C"
+            ]
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "陸域野生動物保護區1141"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "fanca-wildlife-protected-areas-by-county": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "d251dd807a1050f0d0a2d54b044876e3b4f96601c337dea5a7204c2860227ab2",
+      "bytes": 274944,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162 https://data.gov.tw/dataset/7442"
+    },
     "fanca-wildlife-habitats": {
       "topic": "fanca-wildlife-habitats",
       "file": "environment/wildlife-habitats/wildlife-habitats.pmtiles",
@@ -415,6 +1243,330 @@
       "featureId": "properties._featureId",
       "licenseStatus": "approved",
       "rightsEvidence": "https://data.gov.tw/dataset/25659 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-ecological-focus-areas": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.forest.gov.tw/file/79024",
+      "importedAt": "2026-10-09",
+      "sha256": "b02f27b58e6fc7963e5bcbc97aaf7ea7961490a5c3173a9a90f86399724afdd6",
+      "bytes": 7570970,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767",
+      "analysis": {
+        "datasetId": "fanca-ecological-focus-areas-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北部",
+              "南部",
+              "東北部",
+              "東部",
+              "西北部",
+              "西南部",
+              "西部",
+              "離島"
+            ]
+          },
+          "location": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "animals": {
+            "type": "string"
+          },
+          "plants": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "國土綠網關注區域1092"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      }
+    },
+    "fanca-ecological-focus-areas-by-county": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.forest.gov.tw/file/79024",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "9c802e773cc063fa523464f4d08bfb1799a422dc4acc016b5e4d92f384542454",
+      "bytes": 8032231,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-ecological-corridors": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.forest.gov.tw/file/89332",
+      "importedAt": "2026-10-09",
+      "sha256": "7354bcd9c0694d19feea4309e34af510c58ec91f8cc40b95cbab16009a407a7e",
+      "bytes": 4426123,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767",
+      "analysis": {
+        "datasetId": "fanca-ecological-corridors-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "values": [
+              "丘陵",
+              "平原",
+              "海岸",
+              "溪流",
+              "離島"
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北區",
+              "南區",
+              "東北區",
+              "東區",
+              "西北區",
+              "西區",
+              "西南區",
+              "西南區、南區",
+              "離島"
+            ]
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "南投分署",
+              "嘉義分署",
+              "宜蘭分署",
+              "屏東分署",
+              "新竹分署",
+              "臺中分署",
+              "臺東分署",
+              "花蓮分署"
+            ]
+          },
+          "administrative_area": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "112年5月11日更新",
+              "113年6月18日更新"
+            ]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "國土生態綠網區域保育軸帶1141"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      }
+    },
+    "fanca-ecological-corridors-by-county": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.forest.gov.tw/file/89332",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "686e64853140c1376f80cb39fcb1f48e1d257409604f3265f7bdd3d7dbcbf838",
+      "bytes": 4771638,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-natural-vegetation": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+      "importedAt": "2026-10-09",
+      "sha256": "c5fb8a2ec05ea41f93a483f1e0485cb976d61ec0b9129b3e7dfea31f27316a5e",
+      "bytes": 68342923,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930",
+      "analysis": {
+        "datasetId": "fanca-natural-vegetation-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "formation_code": {
+            "type": "string"
+          },
+          "class_code": {
+            "type": "string",
+            "values": [
+              "A",
+              "F",
+              "G",
+              "H",
+              "S",
+              "X"
+            ]
+          },
+          "class_name": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "森林",
+              "灌叢",
+              "特殊棲地植生",
+              "草本植群"
+            ]
+          },
+          "class_original": {
+            "type": "string",
+            "values": [
+              "人工植",
+              "其他",
+              "森林",
+              "灌叢",
+              "特殊棲",
+              "草本植"
+            ]
+          },
+          "subclass_original": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "天然裸露地",
+              "岩壁與碎石",
+              "海岸",
+              "草本植群",
+              "針葉林",
+              "針闊葉混淆",
+              "針闊葉灌叢",
+              "闊葉林"
+            ]
+          },
+          "altitude_zone": {
+            "type": "number"
+          },
+          "original_code": {
+            "type": "number"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "source_row": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "2003–2009 年調查；2013 年局部修正"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      }
+    },
+    "fanca-natural-vegetation-by-county": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "09d13957f4c1bed1dae64e63a6963832fc0c7493af9264d109133a6aaffd75ea",
+      "bytes": 69519872,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930 https://data.gov.tw/dataset/7442"
     },
     "gsmma-active-faults": {
       "topic": "gsmma-active-faults",
@@ -1793,12 +2945,12 @@
       "crs": "EPSG:4326",
       "source": "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip",
       "importedAt": "2026-10-09",
-      "sha256": "5ef9fc9ec8b6a0a0327c2b03ba8a6d939dbac2cf09ccdf96c199959470f8d410",
-      "bytes": 12914,
+      "sha256": "b182bc9c32b42a4ddd6b7939045b29a64a396b0ce05f200dafa7ea8195a34c71",
+      "bytes": 18623,
       "featureCount": 22,
       "featureId": "none",
       "licenseStatus": "approved",
-      "rightsEvidence": "https://data.gov.tw/dataset/7442 https://data.gov.tw/dataset/9823 https://data.gov.tw/dataset/25781 https://data.gov.tw/dataset/129474 https://data.gov.tw/dataset/25784 https://data.gov.tw/dataset/32725 https://data.gov.tw/dataset/25776 https://data.gov.tw/dataset/108523 https://data.gov.tw/dataset/152950 https://data.gov.tw/dataset/121274 https://data.gov.tw/dataset/125615 https://data.gov.tw/dataset/163742 https://data.gov.tw/dataset/8341 https://data.gov.tw/dataset/9370 https://data.gov.tw/dataset/25766 https://data.gov.tw/dataset/6697 https://data.gov.tw/dataset/28691 https://data.gov.tw/dataset/25659 https://data.moenv.gov.tw/dataset/detail/STAT_P_113 https://data.moa.gov.tw/open_detail.aspx?id=156"
+      "rightsEvidence": "https://data.gov.tw/dataset/7442 https://data.gov.tw/dataset/73225 https://data.gov.tw/dataset/73226 https://data.gov.tw/dataset/73220 https://data.gov.tw/dataset/73221 https://data.gov.tw/dataset/73232 https://data.gov.tw/dataset/9823 https://data.gov.tw/dataset/25781 https://data.gov.tw/dataset/129474 https://data.gov.tw/dataset/25784 https://data.gov.tw/dataset/32725 https://data.gov.tw/dataset/25776 https://data.gov.tw/dataset/108523 https://data.gov.tw/dataset/152950 https://data.gov.tw/dataset/121274 https://data.gov.tw/dataset/125615 https://data.gov.tw/dataset/163742 https://data.gov.tw/dataset/8341 https://data.gov.tw/dataset/9370 https://data.gov.tw/dataset/25766 https://data.gov.tw/dataset/6697 https://data.gov.tw/dataset/28691 https://data.gov.tw/dataset/25659 https://data.gov.tw/dataset/9930 https://data.moenv.gov.tw/dataset/detail/STAT_P_113 https://data.moa.gov.tw/open_detail.aspx?id=156 https://data.moa.gov.tw/open_detail.aspx?id=162 https://www.forest.gov.tw/0004767"
     },
     "tw-admin-counties": {
       "topic": "tw-admin-counties",
@@ -2140,7 +3292,7 @@
       "rightsEvidence": "https://data.gov.tw/dataset/129474 https://data.gov.tw/dataset/7442"
     },
     "wra-dams": {
-      "topic": "wra-reservoir-water",
+      "topic": "wra-reservoir-water-dam",
       "file": "water/reservoirs/reservoir-dams.geojson",
       "format": "geojson",
       "crs": "EPSG:4326",
@@ -3214,6 +4366,360 @@
       "featureId": "properties._featureId",
       "licenseStatus": "approved",
       "rightsEvidence": "https://data.gov.tw/dataset/25766 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-tra-routes-analysis": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+      "importedAt": "2026-10-09",
+      "sha256": "373df2d138e09504a731418314bcd9c259a47595e170219cbaec651b5f07c4cf",
+      "bytes": 833210,
+      "featureCount": 2607,
+      "analysis": {
+        "datasetId": "nlsc-tra-routes-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "臺鐵五堵貨場",
+              "臺鐵內灣線",
+              "臺鐵六家線",
+              "臺鐵北迴線",
+              "臺鐵南迴線",
+              "臺鐵宜蘭線",
+              "臺鐵屏東線",
+              "臺鐵平溪線",
+              "臺鐵成追線",
+              "臺鐵沙崙線",
+              "臺鐵海岸線(海線)",
+              "臺鐵深澳線",
+              "臺鐵縱貫線(北段)",
+              "臺鐵縱貫線(南段)",
+              "臺鐵縱貫線(海線)",
+              "臺鐵縱貫線南段",
+              "臺鐵臺中線(山線)",
+              "臺鐵臺中臨港線",
+              "臺鐵臺東線",
+              "臺鐵舊山線",
+              "臺鐵花蓮臨港線",
+              "臺鐵集集線",
+              "阿里山林業鐵路眠月線",
+              "阿里山林業鐵路祝山線",
+              "阿里山林業鐵路神木線",
+              "阿里山林業鐵路阿里山線"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "臺灣鐵路"
+            ]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220"
+    },
+    "nlsc-thsr-routes-analysis": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "62ab91adf75fab274f5c4957e84a699276b9566573d43453d365285fa634b2eb",
+      "bytes": 366274,
+      "featureCount": 134,
+      "analysis": {
+        "datasetId": "nlsc-thsr-routes-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台灣高速鐵路",
+              "台灣高鐵中部烏日基地",
+              "台灣高鐵嘉義太保基地",
+              "台灣高鐵新竹六家基地"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": [
+              "高鐵"
+            ]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string",
+            "values": [
+              "201608",
+              "201811",
+              "201908",
+              "201911",
+              "202001",
+              "202106",
+              "202107",
+              "202111",
+              "202112",
+              "202201",
+              "202208",
+              "202212",
+              "202302",
+              "202311",
+              "202401"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221"
+    },
+    "nlsc-highways-analysis": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "fd184a44517bb3e76e19ad9dd79f1783785a00f26084347171d8fc0b30c421b7",
+      "bytes": 1962456,
+      "featureCount": 6020,
+      "analysis": {
+        "datasetId": "nlsc-highways-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "國1",
+              "國10",
+              "國2",
+              "國2甲",
+              "國3",
+              "國3甲",
+              "國4",
+              "國5",
+              "國6",
+              "國8"
+            ]
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義市",
+              "嘉義縣",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": [
+              "HU",
+              "HW"
+            ]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": [
+              "國道",
+              "國道附屬道路"
+            ]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": [
+              "9420101",
+              "9420102",
+              "9421001",
+              "9440100",
+              "9440202"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
+    },
+    "nlsc-expressways-analysis": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "4e2a69b75ec866c67beab8a3009b30e557687c24a6e76a013a5bf85106c2108d",
+      "bytes": 1087976,
+      "featureCount": 3093,
+      "analysis": {
+        "datasetId": "nlsc-expressways-analysis",
+        "geometryTypes": [
+          "LineString"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "台61",
+              "台62",
+              "台62甲",
+              "台64",
+              "台65",
+              "台66",
+              "台68",
+              "台68甲",
+              "台72",
+              "台74",
+              "台76",
+              "台78",
+              "台82",
+              "台84",
+              "台86",
+              "台88"
+            ]
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義縣",
+              "基隆市",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": [
+              "1E"
+            ]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": [
+              "省道快速公路"
+            ]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": [
+              "9420202",
+              "9421001",
+              "9440100",
+              "9440202"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string",
+            "values": [
+              "一段",
+              "三段",
+              "二段"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
     },
     "wra-river-polygons-analysis": {
       "topic": "wra-river-channel",
@@ -4685,6 +6191,169 @@
       "licenseStatus": "approved",
       "rightsEvidence": "https://data.gov.tw/dataset/28691"
     },
+    "fanca-wildlife-protected-areas-analysis": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+      "importedAt": "2026-10-09",
+      "sha256": "49484e00d68f9544e5d7575d2938f26ac2493ff2ff2c8579d10d166ffe3d6122",
+      "bytes": 433041,
+      "featureCount": 32,
+      "analysis": {
+        "datasetId": "fanca-wildlife-protected-areas-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "WR02",
+              "WR03",
+              "WR04",
+              "WR05",
+              "WR07",
+              "WR09",
+              "WR10",
+              "WR11",
+              "WR13",
+              "WR14",
+              "WR15",
+              "WR16",
+              "WR17",
+              "WR18",
+              "WR19",
+              "WR21"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台南縣曾文溪口北岸黑面琵鷺動物保護區",
+              "台東縣海端鄉新武呂溪魚類保護區",
+              "大肚溪口野生動物保護區",
+              "宜蘭縣雙連埤野生動物保護區",
+              "新竹市濱海野生動物保護區",
+              "桃園高榮野生動物保護區",
+              "櫻花鉤吻鮭野生動物保護區",
+              "無尾港水鳥保護區",
+              "玉里野生動物保護區",
+              "翡翠水庫食蛇龜野生動物保護區",
+              "臺北市野雁保護區",
+              "臺南市四草野生動物保護區",
+              "蘭陽溪口水鳥保護區",
+              "馬祖列島雌光螢野生動物保護區",
+              "高美野生動物保護區",
+              "高雄市那瑪夏區楠梓仙溪野生動物保護區"
+            ]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "宜蘭縣政府",
+              "新竹市政府",
+              "林業及自然保育署宜蘭分署",
+              "林業及自然保育署花蓮分署",
+              "桃園市政府",
+              "臺中市政府",
+              "臺中市政府及彰化縣政府",
+              "臺北市政府",
+              "臺南市政府",
+              "臺東縣政府",
+              "連江縣政府",
+              "高雄市政府"
+            ]
+          },
+          "established_date": {
+            "type": "string",
+            "values": [
+              "1993-05-26",
+              "1993-09-24",
+              "1993-11-19",
+              "1994-11-30",
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2001-06-08",
+              "2002-11-01",
+              "2003-11-07",
+              "2004-09-29",
+              "2012-03-03",
+              "2022-05-03",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "announcement_date": {
+            "type": "string",
+            "values": [
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2002-11-01",
+              "2003-11-07",
+              "2007-09-29",
+              "2012-06-22",
+              "2015-06-23",
+              "2017-03-21",
+              "2019-04-23",
+              "2020-04-22",
+              "2022-05-03",
+              "2025-06-30",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "-",
+              "109年10月19日更新",
+              "111年5月12日更新",
+              "111年8月16日更新",
+              "111年8月16日更新(面積待修正公告)",
+              "114年6月30日更新",
+              "114年7月11日更新",
+              "114年7月22日更新",
+              "（待更新）"
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "核心保育區",
+              "核心區",
+              "永續利用區",
+              "緩衝區",
+              "緩衝區A",
+              "緩衝區B",
+              "緩衝區C"
+            ]
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "陸域野生動物保護區1141"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162"
+    },
     "fanca-wildlife-habitats-analysis": {
       "topic": "fanca-wildlife-habitats",
       "file": "environment/wildlife-habitats/wildlife-habitats.geojson.gzip",
@@ -4948,6 +6617,288 @@
       "featureId": "feature.id",
       "licenseStatus": "approved",
       "rightsEvidence": "https://data.gov.tw/dataset/25659"
+    },
+    "fanca-ecological-focus-areas-analysis": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.forest.gov.tw/file/79024",
+      "importedAt": "2026-10-09",
+      "sha256": "cb1af3c5a2615739edeb223153c775ff2463c8cd4e0c107254514d6e164f52c5",
+      "bytes": 12239854,
+      "featureCount": 44,
+      "analysis": {
+        "datasetId": "fanca-ecological-focus-areas-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北部",
+              "南部",
+              "東北部",
+              "東部",
+              "西北部",
+              "西南部",
+              "西部",
+              "離島"
+            ]
+          },
+          "location": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "animals": {
+            "type": "string"
+          },
+          "plants": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "國土綠網關注區域1092"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-ecological-corridors-analysis": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.forest.gov.tw/file/89332",
+      "importedAt": "2026-10-09",
+      "sha256": "c57eae77fdc05eb0ce2221187d8edec20906c193fd142b0554f98822a6a2d97c",
+      "bytes": 3395139,
+      "featureCount": 45,
+      "analysis": {
+        "datasetId": "fanca-ecological-corridors-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "values": [
+              "丘陵",
+              "平原",
+              "海岸",
+              "溪流",
+              "離島"
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北區",
+              "南區",
+              "東北區",
+              "東區",
+              "西北區",
+              "西區",
+              "西南區",
+              "西南區、南區",
+              "離島"
+            ]
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "南投分署",
+              "嘉義分署",
+              "宜蘭分署",
+              "屏東分署",
+              "新竹分署",
+              "臺中分署",
+              "臺東分署",
+              "花蓮分署"
+            ]
+          },
+          "administrative_area": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "112年5月11日更新",
+              "113年6月18日更新"
+            ]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "國土生態綠網區域保育軸帶1141"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-natural-vegetation-analysis": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+      "importedAt": "2026-10-09",
+      "sha256": "b5ac8ee84749f45b91924af6a46acbb391935cd8bbfb777c6109b64cf5ae4467",
+      "bytes": 90027923,
+      "featureCount": 49953,
+      "analysis": {
+        "datasetId": "fanca-natural-vegetation-analysis",
+        "geometryTypes": [
+          "Polygon",
+          "MultiPolygon"
+        ],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "formation_code": {
+            "type": "string"
+          },
+          "class_code": {
+            "type": "string",
+            "values": [
+              "A",
+              "F",
+              "G",
+              "H",
+              "S",
+              "X"
+            ]
+          },
+          "class_name": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "森林",
+              "灌叢",
+              "特殊棲地植生",
+              "草本植群"
+            ]
+          },
+          "class_original": {
+            "type": "string",
+            "values": [
+              "人工植",
+              "其他",
+              "森林",
+              "灌叢",
+              "特殊棲",
+              "草本植"
+            ]
+          },
+          "subclass_original": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "天然裸露地",
+              "岩壁與碎石",
+              "海岸",
+              "草本植群",
+              "針葉林",
+              "針闊葉混淆",
+              "針闊葉灌叢",
+              "闊葉林"
+            ]
+          },
+          "altitude_zone": {
+            "type": "number"
+          },
+          "original_code": {
+            "type": "number"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "source_row": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": [
+              "2003–2009 年調查；2013 年局部修正"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": [
+              "GEOS MakeValid (linework)，保留面成分"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930"
     }
   }
 }

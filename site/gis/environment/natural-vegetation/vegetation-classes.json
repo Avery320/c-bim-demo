@@ -1,0 +1,23 @@
+[
+  { "value": "F", "sourceValue": "森林", "label": "森林", "color": "#d9db8c" },
+  { "value": "S", "sourceValue": "灌叢", "label": "灌叢", "color": "#e8beff" },
+  {
+    "value": "G",
+    "sourceValue": "草本植",
+    "label": "草本植群",
+    "color": "#00734c"
+  },
+  {
+    "value": "H",
+    "sourceValue": "特殊棲",
+    "label": "特殊棲地植生",
+    "color": "#00c5ff"
+  },
+  {
+    "value": "A",
+    "sourceValue": "人工植",
+    "label": "人工植生",
+    "color": "#ff5500"
+  },
+  { "value": "X", "sourceValue": "其他", "label": "其他", "color": "#828282" }
+]

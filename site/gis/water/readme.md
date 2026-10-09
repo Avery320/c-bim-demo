@@ -12,7 +12,8 @@
 | --- | --- | --- | --- |
 | 流域 Basin | [basins.geojson](basins/basins.geojson) | GeoJSON／EPSG:4326；流域面與邊界，共 143 筆 | 2026-10-09 |
 | 河川 River | [rivers.geojson.gzip](rivers/rivers.geojson.gzip) | GeoJSON + gzip／EPSG:4326；河道面，共 13,261 筆 | 2026-10-09 |
-| 水庫集水區／壩體 | [reservoir-catchments.geojson](reservoirs/reservoir-catchments.geojson)、[reservoir-dams.geojson](reservoirs/reservoir-dams.geojson) | GeoJSON／EPSG:4326；集水區面 80 筆、壩體位置點 98 筆 | 2026-10-09 |
+| 水庫集水區 Reservoir Catchments | [reservoir-catchments.geojson](reservoirs/reservoir-catchments.geojson) | GeoJSON／EPSG:4326；集水區面 80 筆 | 2026-10-09 |
+| 水庫壩體 Reservoir Dams | [reservoir-dams.geojson](reservoirs/reservoir-dams.geojson) | GeoJSON／EPSG:4326；壩體位置點 98 筆 | 2026-10-09 |
 | 滯洪池點位 Detention | [detention-basins.geojson](detention-basins/detention-basins.geojson) | GeoJSON／EPSG:4326；位置點，共 70 筆 | 2026-10-09 |
 | 河川水位測站位置 | [river-level-stations.geojson](river-level-stations/river-level-stations.geojson) | GeoJSON／EPSG:4326；位置點，共 349 筆 | 2026-10-09 |
 | 地下水觀測井位置 | [groundwater-wells.geojson](groundwater-wells/groundwater-wells.geojson) | GeoJSON／EPSG:4326；位置點，共 804 筆 | 2026-10-09 |
@@ -40,7 +41,7 @@
 
 ## 水庫集水區／壩體
 
-- 主題目錄：`reservoirs/`；畫面主題 ID：`wra-reservoir-water`。
+- 主題目錄：`reservoirs/`；畫面主題 ID：集水區 `wra-reservoir-water`、壩體 `wra-reservoir-water-dam`；各自控制顯示與外觀。
 - 原始格式：集水區為 WFS GeoJSON（`reservoir`）；壩體為 ZIP／SHP（`SWRESOIR`）。
 
 | 內容／資料 ID | 原始來源 | 授權依據 |
@@ -98,5 +99,5 @@
 - PMTiles 採 EPSG:3857，供地圖顯示；完整 GeoJSON 採 EPSG:4326，供顯示、查詢與分析。`.geojson.gzip` 為壓縮的完整資料，未從圖磚反推幾何。
 - `*-by-county.pmtiles` 使用[國土測繪中心官方縣市界](../administrative/readme.md)產製，保留原始邏輯圖徵身分；各資產來源記錄於 manifest。
 - 原始版本與日期維持既有紀錄，來源未提供的日期不推算；排除與幾何修復紀錄保留於資料及 manifest。
-- 人工更新沿用 `pnpm gis:refresh`；`--rebuild` 從本地完整資料重建衍生資產，不重新下載。
+- 人工更新沿用 `pnpm gis:refresh --water`；`--rebuild` 從本地完整資料重建衍生資產，不重新下載。
 - 主題資料夾只管理資料檔案，說明集中維護於本文件。

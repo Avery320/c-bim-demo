@@ -1,6 +1,6 @@
 # GIS 圖資
 
-本目錄管理隨專案部署的固定圖資，以及線上圖層的來源說明。現有內容分為 **8 個分類、22 個主題**；來源與使用限制集中於各分類的 `readme.md`，總覽與分類合計 **9 份 README**。
+本目錄管理隨專案部署的固定圖資，以及線上圖層的來源說明。現有內容分為 **9 個分類、33 個主題**；來源與使用限制集中於各分類的 `readme.md`，總覽與分類合計 **10 份 README**。
 
 ## 主題分類
 
@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | Basemap layers | [basemap](basemap/readme.md) | OpenFreeMap 線上底圖 |
 | 土地使用 Land Use | [land-use](land-use/readme.md) | 官方線上影像與座標查詢 |
+| 交通 Transport | [transport](transport/readme.md) | 本地固定資料 |
 | 水資源 Water | [water](water/readme.md) | 本地固定資料 |
 | 再生能源 Energy | [energy](energy/readme.md) | 本地固定資料 |
 | 環境 Environment | [environment](environment/readme.md) | 本地固定資料 |
@@ -30,6 +31,14 @@ public/gis/                           # GIS 固定圖資與動態服務來源說
 │   ├── readme.md                     # 土地使用服務來源、資料類型與更新方式
 │   ├── land-use-survey/              # 國土利用現況調查成果圖；動態影像與座標查詢
 │   └── water-land-use/               # 水利用地；動態影像與座標查詢
+├── transport/                        # 交通 Transport
+│   ├── readme.md                     # 交通來源、資料範圍、日期與更新指令
+│   ├── thsr-stations/                # 高鐵站 THSR Stations
+│   ├── tra-stations/                 # 臺鐵站 TRA Stations
+│   ├── tra-routes/                   # 臺灣鐵路 Taiwan Rail Routes
+│   ├── thsr-routes/                  # 高鐵路線 THSR Routes
+│   ├── highways/                     # 國道 Highways
+│   └── expressways/                  # 快速道路 Expressways
 ├── water/                            # 水資源 Water
 │   ├── readme.md                     # 水資源來源、資料類型與更新日期
 │   ├── basins/                       # 流域 Basin
@@ -46,8 +55,12 @@ public/gis/                           # GIS 固定圖資與動態服務來源說
 ├── environment/                      # 環境 Environment
 │   ├── readme.md                     # 環境來源、資料類型與更新日期
 │   ├── protected-trees/              # 受保護樹木 Protected Trees
+│   ├── wildlife-protected-areas/     # 野生動物保護區 Wildlife Protected Areas
 │   ├── wildlife-habitats/            # 重要棲息環境 Wildlife Habitats
-│   └── important-wetlands/           # 重要濕地 Important Wetlands
+│   ├── important-wetlands/           # 重要濕地 Important Wetlands
+│   ├── ecological-network-focus-areas/ # 國土生態綠網關注區域 Ecological Network Focus Areas
+│   ├── ecological-conservation-corridors/ # 國土生態綠網區域保育軸帶 Ecological Conservation Corridors
+│   └── natural-vegetation/           # 天然植群圖 Natural Vegetation
 ├── waste/                            # 廢棄物 Waste
 │   ├── readme.md                     # 廢棄物設施來源、資料類型與更新日期
 │   ├── incinerators/                 # 焚化爐 Incinerator
@@ -65,7 +78,7 @@ public/gis/                           # GIS 固定圖資與動態服務來源說
 
 - 實體目錄 `public/gis/`，網站 URL `/gis/`。沒有快照雜湊資料夾。
 - 本地檔案依分類 → 主題 → 檔案管理；README 只放在 GIS 根目錄及分類資料夾，主題來源集中於分類文件。名稱取自資料意義，點／線／面是顯示方法。
-- [manifest.json](manifest.json) 是分類名稱、畫面主題名稱、目錄與 35 份資料資產路徑的共同定義，瀏覽器及產製腳本共用。三份本地圖例 JSON 另放在對應主題。
+- [manifest.json](manifest.json) 是分類名稱、畫面主題名稱、目錄與 61 份資料資產路徑的共同定義，瀏覽器及產製腳本共用。四份本地圖例 JSON 另放在對應主題。
 - 線上服務的來源與取得方式記錄於分類文件；地表地層的本地圖例放在 `geology/surface-geology/`。
 - 同主題用副檔名及 `-by-county` 區分用途；不同樹木來源用城市後綴，水庫用 `catchments`／`dams` 區分。
 - 資料 ID 是既有程式與圖徵追溯身分，機關代碼不因改名重建；透過 manifest 對應可讀名稱與路徑。
@@ -112,17 +125,23 @@ public/gis/                           # GIS 固定圖資與動態服務來源說
 
 線上服務由 Catalog 宣告來源與顯示規則，瀏覽器按需讀取原服務；本地圖例與服務來源說明依所屬分類管理。
 
-- `scripts/gis-snapshot.mjs`：保留來源／授權契約，路徑讀取 manifest；核對雜湊、身分、能力、筆數及根目錄／分類 README。
-- `scripts/refresh-gis-assets.mjs`：人工更新或本地重建；沿用同一轉換／裁切／產製流程。先寫暫存目錄，全部成功後置換 `gis/`，安裝失敗還原原目錄。
+- `scripts/gis/shared/snapshot.mjs`：保留來源／授權契約，路徑讀取 manifest；核對雜湊、身分、能力、筆數及根目錄／分類 README。
+- `scripts/gis/refresh.mjs`：人工更新或本地重建；沿用同一轉換／裁切／產製流程。先寫暫存目錄，全部成功後置換 `gis/`，安裝失敗還原原目錄。
 - `src/gis/data/GisSnapshot.ts`：共用名稱與資料路徑，建立含檔案雜湊的載入 URL。
 - MapLayerStyle／MapLayerRenderer：沿用共用點、線、面與影像的樣式、開關與生命週期，不新增顯示演算法。
 
 | 人工指令 | 用途 |
 | --- | --- |
 | `pnpm gis:refresh` | 從原機關更新全部本地資料 |
+| `pnpm gis:refresh --transport` | 更新車站、軌道、國道與快速道路 |
+| `pnpm gis:refresh --water` | 更新水資源與淹水潛勢 |
+| `pnpm gis:refresh --energy` | 更新風電圖資 |
+| `pnpm gis:refresh --environment` | 更新樹木、野生動物保護區、重要棲息環境、濕地、國土生態綠網與天然植群 |
+| `pnpm gis:refresh --waste` | 更新焚化爐與掩埋場 |
 | `pnpm gis:refresh --themes` | 更新風電、樹木、廢棄物及淹水潛勢 |
 | `pnpm gis:refresh --geology` | 更新活動斷層與土壤液化本地資料 |
-| `pnpm gis:refresh --ecology` | 更新棲息環境與濕地 |
+| `pnpm gis:refresh --ecology` | 更新保護區、棲息環境、濕地與國土生態綠網 |
+| `pnpm gis:refresh --vegetation` | 只更新天然植群圖 |
 | `pnpm gis:refresh --rebuild` | 從本地完整資料重建衍生資產，保留資料新增／更新日期 |
 | `pnpm gis:verify` | 核對資料完整性與文件位置 |
 | `pnpm gis:verify-public` | 公開部署前核對來源與授權紀錄 |
