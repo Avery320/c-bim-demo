@@ -3,15 +3,35 @@
     "class": 1,
     "label": "0.3–0.5 m",
     "sourceText": "0.3-0.5",
-    "color": "#fee2e2"
+    "color": "#fee2e2",
+    "heightLevel": 1
   },
   {
     "class": 2,
     "label": "0.5–1 m",
     "sourceText": "0.5-1.0",
-    "color": "#fca5a5"
+    "color": "#fca5a5",
+    "heightLevel": 2
   },
-  { "class": 3, "label": "1–2 m", "sourceText": "1.0-2.0", "color": "#f87171" },
-  { "class": 4, "label": "2–3 m", "sourceText": "2.0-3.0", "color": "#dc2626" },
-  { "class": 5, "label": ">3 m", "sourceText": ">3.0", "color": "#7f1d1d" }
+  {
+    "class": 3,
+    "label": "1–2 m",
+    "sourceText": "1.0-2.0",
+    "color": "#f87171",
+    "heightLevel": 3
+  },
+  {
+    "class": 4,
+    "label": "2–3 m",
+    "sourceText": "2.0-3.0",
+    "color": "#dc2626",
+    "heightLevel": 4
+  },
+  {
+    "class": 5,
+    "label": ">3 m",
+    "sourceText": ">3.0",
+    "color": "#7f1d1d",
+    "heightLevel": 5
+  }
 ]

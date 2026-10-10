@@ -2,16 +2,19 @@
   {
     "code": "HIGH",
     "label": "高潛勢",
-    "color": "#ff0000"
+    "color": "#ff0000",
+    "heightLevel": 3
   },
   {
     "code": "MED",
     "label": "中潛勢",
-    "color": "#ffff00"
+    "color": "#ffff00",
+    "heightLevel": 2
   },
   {
     "code": "LOW",
     "label": "低潛勢",
-    "color": "#55ff00"
+    "color": "#55ff00",
+    "heightLevel": 1
   }
 ]
