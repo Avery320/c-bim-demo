@@ -1,0 +1,1052 @@
+{
+  "schemaVersion": 3,
+  "id": "70a657d05f7bccebca36",
+  "label": "交通 Transport",
+  "topics": {
+    "nlsc-thsr-stations": {
+      "directory": "transport/thsr-stations",
+      "label": "高鐵站 THSR Stations",
+      "delivery": "local"
+    },
+    "nlsc-tra-stations": {
+      "directory": "transport/tra-stations",
+      "label": "臺鐵站 TRA Stations",
+      "delivery": "local"
+    },
+    "nlsc-highways": {
+      "directory": "transport/highways",
+      "label": "國道 Highways",
+      "delivery": "local"
+    },
+    "nlsc-expressways": {
+      "directory": "transport/expressways",
+      "label": "快速道路 Expressways",
+      "delivery": "local"
+    },
+    "nlsc-tra-routes": {
+      "directory": "transport/tra-routes",
+      "label": "臺灣鐵路 Taiwan Rail Routes",
+      "delivery": "local"
+    },
+    "nlsc-thsr-routes": {
+      "directory": "transport/thsr-routes",
+      "label": "高鐵路線 THSR Routes",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "nlsc-thsr-stations": {
+      "topic": "nlsc-thsr-stations",
+      "kind": "point",
+      "displayAssetId": "nlsc-thsr-stations",
+      "analysisAssetId": "nlsc-thsr-stations",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "railway_system",
+          "label": "鐵路系統"
+        },
+        {
+          "property": "alternate_name",
+          "label": "其他名稱"
+        },
+        {
+          "property": "address",
+          "label": "地址"
+        },
+        {
+          "property": "telephone",
+          "label": "電話"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 1,
+        "10005": 1,
+        "10007": 1,
+        "10008": 0,
+        "10009": 1,
+        "10010": 1,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 2,
+        "64000": 1,
+        "65000": 1,
+        "66000": 1,
+        "67000": 1,
+        "68000": 1,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nlsc-tra-stations": {
+      "topic": "nlsc-tra-stations",
+      "kind": "point",
+      "displayAssetId": "nlsc-tra-stations",
+      "analysisAssetId": "nlsc-tra-stations",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "railway_system",
+          "label": "鐵路系統"
+        },
+        {
+          "property": "alternate_name",
+          "label": "其他名稱"
+        },
+        {
+          "property": "address",
+          "label": "地址"
+        },
+        {
+          "property": "telephone",
+          "label": "電話"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 22,
+        "10004": 14,
+        "10005": 16,
+        "10007": 9,
+        "10008": 5,
+        "10009": 5,
+        "10010": 4,
+        "10013": 18,
+        "10014": 14,
+        "10015": 26,
+        "10016": 0,
+        "10017": 9,
+        "10018": 6,
+        "10020": 2,
+        "63000": 4,
+        "64000": 18,
+        "65000": 24,
+        "66000": 23,
+        "67000": 20,
+        "68000": 9,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nlsc-tra-routes": {
+      "topic": "nlsc-tra-routes",
+      "kind": "line",
+      "displayAssetId": "nlsc-tra-routes",
+      "analysisAssetId": "nlsc-tra-routes-analysis",
+      "regionalAssetId": "nlsc-tra-routes-by-county",
+      "tileLayer": "routes",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "railway_system",
+          "label": "鐵路系統"
+        },
+        {
+          "property": "original_type",
+          "label": "官方路線類型代碼"
+        },
+        {
+          "property": "bridge_tunnel",
+          "label": "橋梁／隧道名稱"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 384,
+        "10004": 120,
+        "10005": 241,
+        "10007": 85,
+        "10008": 84,
+        "10009": 69,
+        "10010": 175,
+        "10013": 201,
+        "10014": 214,
+        "10015": 223,
+        "10016": 0,
+        "10017": 126,
+        "10018": 55,
+        "10020": 11,
+        "63000": 5,
+        "64000": 36,
+        "65000": 307,
+        "66000": 122,
+        "67000": 120,
+        "68000": 75,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nlsc-thsr-routes": {
+      "topic": "nlsc-thsr-routes",
+      "kind": "line",
+      "displayAssetId": "nlsc-thsr-routes",
+      "analysisAssetId": "nlsc-thsr-routes-analysis",
+      "regionalAssetId": "nlsc-thsr-routes-by-county",
+      "tileLayer": "routes",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "railway_system",
+          "label": "鐵路系統"
+        },
+        {
+          "property": "original_type",
+          "label": "官方路線類型代碼"
+        },
+        {
+          "property": "bridge_tunnel",
+          "label": "橋梁／隧道名稱"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 35,
+        "10005": 42,
+        "10007": 18,
+        "10008": 0,
+        "10009": 2,
+        "10010": 4,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 4,
+        "10020": 0,
+        "63000": 2,
+        "64000": 4,
+        "65000": 4,
+        "66000": 13,
+        "67000": 1,
+        "68000": 18,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nlsc-highways": {
+      "topic": "nlsc-highways",
+      "kind": "line",
+      "displayAssetId": "nlsc-highways",
+      "analysisAssetId": "nlsc-highways-analysis",
+      "regionalAssetId": "nlsc-highways-by-county",
+      "tileLayer": "routes",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "route_number",
+          "label": "路線編號"
+        },
+        {
+          "property": "road_name",
+          "label": "道路名稱"
+        },
+        {
+          "property": "section",
+          "label": "路段"
+        },
+        {
+          "property": "road_class_label",
+          "label": "官方道路分類"
+        },
+        {
+          "property": "road_class",
+          "label": "道路分類編碼 1"
+        },
+        {
+          "property": "original_class2",
+          "label": "道路分類編碼 2"
+        },
+        {
+          "property": "county",
+          "label": "原資料縣市"
+        },
+        {
+          "property": "bridge_tunnel",
+          "label": "橋梁／隧道名稱"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 124,
+        "10004": 325,
+        "10005": 395,
+        "10007": 198,
+        "10008": 356,
+        "10009": 421,
+        "10010": 302,
+        "10013": 183,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 110,
+        "10018": 144,
+        "10020": 58,
+        "63000": 202,
+        "64000": 554,
+        "65000": 431,
+        "66000": 840,
+        "67000": 1019,
+        "68000": 482,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nlsc-expressways": {
+      "topic": "nlsc-expressways",
+      "kind": "line",
+      "displayAssetId": "nlsc-expressways",
+      "analysisAssetId": "nlsc-expressways-analysis",
+      "regionalAssetId": "nlsc-expressways-by-county",
+      "tileLayer": "routes",
+      "countyFilter": true,
+      "sourceName": "內政部國土測繪中心",
+      "attribution": "© <a href=\"https://www.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方圖徵編號",
+          "query": false
+        },
+        {
+          "property": "route_number",
+          "label": "路線編號"
+        },
+        {
+          "property": "road_name",
+          "label": "道路名稱"
+        },
+        {
+          "property": "section",
+          "label": "路段"
+        },
+        {
+          "property": "road_class_label",
+          "label": "官方道路分類"
+        },
+        {
+          "property": "road_class",
+          "label": "道路分類編碼 1"
+        },
+        {
+          "property": "original_class2",
+          "label": "道路分類編碼 2"
+        },
+        {
+          "property": "county",
+          "label": "原資料縣市"
+        },
+        {
+          "property": "bridge_tunnel",
+          "label": "橋梁／隧道名稱"
+        },
+        {
+          "property": "updated_yyyymm",
+          "label": "官方異動年月"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 95,
+        "10005": 329,
+        "10007": 271,
+        "10008": 6,
+        "10009": 428,
+        "10010": 359,
+        "10013": 35,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 127,
+        "10018": 230,
+        "10020": 0,
+        "63000": 0,
+        "64000": 26,
+        "65000": 322,
+        "66000": 237,
+        "67000": 465,
+        "68000": 211,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    }
+  },
+  "assets": {
+    "nlsc-thsr-stations": {
+      "topic": "nlsc-thsr-stations",
+      "file": "transport/thsr-stations/thsr-stations.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/7a95cfc5-4e86-44dc-894d-b3bd6b0c83ae/MARK_%E9%AB%98%E9%90%B5%E8%BB%8A%E7%AB%99_1101208_.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "a08906e1e92b3125f59fb58eb77b6be2a6a74c514f68e251815dc5b81acf0c8c",
+      "bytes": 4782,
+      "featureCount": 12,
+      "analysis": {
+        "datasetId": "nlsc-thsr-stations",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "A0000007600",
+              "A0000013098",
+              "B0000001219",
+              "D0000004608",
+              "E0000000231",
+              "F0000013911",
+              "H0000003613",
+              "J0000002120",
+              "K0000001241",
+              "N0000004776",
+              "P0000001965",
+              "Q0000001876"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台灣高鐵嘉義站",
+              "台灣高鐵左營車站",
+              "台灣高鐵彰化車站",
+              "台灣高鐵臺中車站",
+              "台灣高鐵臺南站",
+              "台灣高鐵苗栗站",
+              "臺灣高鐵南港車站",
+              "臺灣高鐵新竹車站",
+              "臺灣高鐵板橋車站",
+              "臺灣高鐵桃園車站",
+              "臺灣高鐵臺北車站",
+              "雲林高鐵站"
+            ]
+          },
+          "alternate_name": {
+            "type": "string",
+            "values": [
+              "雲林高鐵站",
+              "高鐵南港站",
+              "高鐵嘉義站",
+              "高鐵左營站",
+              "高鐵彰化站",
+              "高鐵新竹站",
+              "高鐵板橋站",
+              "高鐵桃園站",
+              "高鐵臺中站",
+              "高鐵臺北站",
+              "高鐵臺南站",
+              "高鐵苗栗站"
+            ]
+          },
+          "address": {
+            "type": "string",
+            "values": [
+              "嘉義縣太保市高鐵西路168號",
+              "彰化縣田中鎮站區路二段99號",
+              "新北市板橋區縣民大道二段7號",
+              "新竹縣竹北市高鐵七路6號",
+              "桃園市中壢區高鐵北路一段6號",
+              "臺中市烏日區站區二路8號",
+              "臺北市北平西路3號",
+              "臺北市南港區南港路一段313號",
+              "臺南市歸仁區歸仁大道100號",
+              "苗栗縣後龍鎮高鐵三路268號",
+              "雲林縣虎尾鎮站前東路301號",
+              "高雄市左營區高鐵路105號"
+            ]
+          },
+          "updated_yyyymm": {
+            "type": "string",
+            "values": [
+              "201208",
+              "201310",
+              "201608",
+              "201806",
+              "201811",
+              "201907",
+              "201908",
+              "201911",
+              "202001",
+              "202012",
+              "202109"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": ["高鐵"]
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "A0000007600",
+              "A0000013098",
+              "B0000001219",
+              "D0000004608",
+              "E0000000231",
+              "F0000013911",
+              "H0000003613",
+              "J0000002120",
+              "K0000001241",
+              "N0000004776",
+              "P0000001965",
+              "Q0000001876"
+            ]
+          },
+          "telephone": {
+            "type": "string",
+            "values": ["02-40663000", "4066-3000"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73225"
+    },
+    "nlsc-tra-stations": {
+      "topic": "nlsc-tra-stations",
+      "file": "transport/tra-stations/tra-stations.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/50508007-F7C7-482B-9959-D178561A0945/resource/6D00CEF8-C64A-4AF4-BF53-94456C6895E8/download",
+      "importedAt": "2026-10-09",
+      "sha256": "ee42334c38d41aa895334ec1ffff6d87a79ff21aca7b524c33f51d82d4fac26e",
+      "bytes": 98746,
+      "featureCount": 248,
+      "analysis": {
+        "datasetId": "nlsc-tra-stations",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "alternate_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "telephone": {
+            "type": "string"
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "railway_system": {
+            "type": "string",
+            "values": ["臺鐵"]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73226"
+    },
+    "nlsc-tra-routes": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+      "importedAt": "2026-10-09",
+      "sha256": "b06238a6e6ba712b21425928363f75414b5e9ebb5f6d8e8cd54743bb0663bf3c",
+      "bytes": 960976,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220"
+    },
+    "nlsc-tra-routes-analysis": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+      "importedAt": "2026-10-09",
+      "sha256": "373df2d138e09504a731418314bcd9c259a47595e170219cbaec651b5f07c4cf",
+      "bytes": 833210,
+      "featureCount": 2607,
+      "analysis": {
+        "datasetId": "nlsc-tra-routes-analysis",
+        "geometryTypes": ["LineString"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "臺鐵五堵貨場",
+              "臺鐵內灣線",
+              "臺鐵六家線",
+              "臺鐵北迴線",
+              "臺鐵南迴線",
+              "臺鐵宜蘭線",
+              "臺鐵屏東線",
+              "臺鐵平溪線",
+              "臺鐵成追線",
+              "臺鐵沙崙線",
+              "臺鐵海岸線(海線)",
+              "臺鐵深澳線",
+              "臺鐵縱貫線(北段)",
+              "臺鐵縱貫線(南段)",
+              "臺鐵縱貫線(海線)",
+              "臺鐵縱貫線南段",
+              "臺鐵臺中線(山線)",
+              "臺鐵臺中臨港線",
+              "臺鐵臺東線",
+              "臺鐵舊山線",
+              "臺鐵花蓮臨港線",
+              "臺鐵集集線",
+              "阿里山林業鐵路眠月線",
+              "阿里山林業鐵路祝山線",
+              "阿里山林業鐵路神木線",
+              "阿里山林業鐵路阿里山線"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": ["臺灣鐵路"]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220"
+    },
+    "nlsc-tra-routes-by-county": {
+      "topic": "nlsc-tra-routes",
+      "file": "transport/tra-routes/tra-routes-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/299841E1-714A-40BA-AF4B-D6527EEA2A41/resource/801DECA5-E75E-40A4-816C-1BD6A1F322C9/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "2f9d243e79d6016fb3a7c4e0e2a4e21a6a1a1f3a104874273ec826a552c1e3b2",
+      "bytes": 996124,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73220 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-thsr-routes": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "94bc06e38b0f59caee51ca9eb694432cc13fb54dffa350737f1d8a3891357a89",
+      "bytes": 143130,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221"
+    },
+    "nlsc-thsr-routes-analysis": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "62ab91adf75fab274f5c4957e84a699276b9566573d43453d365285fa634b2eb",
+      "bytes": 366274,
+      "featureCount": 134,
+      "analysis": {
+        "datasetId": "nlsc-thsr-routes-analysis",
+        "geometryTypes": ["LineString"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台灣高速鐵路",
+              "台灣高鐵中部烏日基地",
+              "台灣高鐵嘉義太保基地",
+              "台灣高鐵新竹六家基地"
+            ]
+          },
+          "railway_system": {
+            "type": "string",
+            "values": ["高鐵"]
+          },
+          "original_type": {
+            "type": "number"
+          },
+          "updated_yyyymm": {
+            "type": "string",
+            "values": [
+              "201608",
+              "201811",
+              "201908",
+              "201911",
+              "202001",
+              "202106",
+              "202107",
+              "202111",
+              "202112",
+              "202201",
+              "202208",
+              "202212",
+              "202302",
+              "202311",
+              "202401"
+            ]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221"
+    },
+    "nlsc-thsr-routes-by-county": {
+      "topic": "nlsc-thsr-routes",
+      "file": "transport/thsr-routes/thsr-routes-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.tgos.tw/tgos/VirtualDir/Product/db6bff0a-58a5-40c1-81fb-ac8312213784/HSRAIL_1130417.zip",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "79235e37dd947b57376ddd9aa62d1a861d8e5fb2dc51030d6be7b72f9ed8cc4f",
+      "bytes": 154239,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73221 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-highways": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "d3c3e55861fcd8fd45de0f2bade8e789c3eb9730883cffed518968f7ad41412f",
+      "bytes": 1857765,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
+    },
+    "nlsc-highways-analysis": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "fd184a44517bb3e76e19ad9dd79f1783785a00f26084347171d8fc0b30c421b7",
+      "bytes": 1962456,
+      "featureCount": 6020,
+      "analysis": {
+        "datasetId": "nlsc-highways-analysis",
+        "geometryTypes": ["LineString"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "國1",
+              "國10",
+              "國2",
+              "國2甲",
+              "國3",
+              "國3甲",
+              "國4",
+              "國5",
+              "國6",
+              "國8"
+            ]
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義市",
+              "嘉義縣",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": ["HU", "HW"]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": ["國道", "國道附屬道路"]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": ["9420101", "9420102", "9421001", "9440100", "9440202"]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
+    },
+    "nlsc-highways-by-county": {
+      "topic": "nlsc-highways",
+      "file": "transport/highways/highways-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "40d61964cedf87076b5843fb79adb4467e4a7fa0da756b67448dc167cb296909",
+      "bytes": 1885511,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232 https://data.gov.tw/dataset/7442"
+    },
+    "nlsc-expressways": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "88ff27804cfc346b3b76eb502cacee6b27f3caeb4780653a6cbf73c8d13719df",
+      "bytes": 1052200,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
+    },
+    "nlsc-expressways-analysis": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+      "importedAt": "2026-10-09",
+      "sha256": "4e2a69b75ec866c67beab8a3009b30e557687c24a6e76a013a5bf85106c2108d",
+      "bytes": 1087976,
+      "featureCount": 3093,
+      "analysis": {
+        "datasetId": "nlsc-expressways-analysis",
+        "geometryTypes": ["LineString"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "route_number": {
+            "type": "string",
+            "values": [
+              "台61",
+              "台62",
+              "台62甲",
+              "台64",
+              "台65",
+              "台66",
+              "台68",
+              "台68甲",
+              "台72",
+              "台74",
+              "台76",
+              "台78",
+              "台82",
+              "台84",
+              "台86",
+              "台88"
+            ]
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義縣",
+              "基隆市",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "臺中市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "road_class": {
+            "type": "string",
+            "values": ["1E"]
+          },
+          "road_class_label": {
+            "type": "string",
+            "values": ["省道快速公路"]
+          },
+          "original_class2": {
+            "type": "string",
+            "values": ["9420202", "9421001", "9440100", "9440202"]
+          },
+          "updated_yyyymm": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "bridge_tunnel": {
+            "type": "string"
+          },
+          "road_name": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string",
+            "values": ["一段", "三段", "二段"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232"
+    },
+    "nlsc-expressways-by-county": {
+      "topic": "nlsc-expressways",
+      "file": "transport/expressways/expressways-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://opdadm.moi.gov.tw/api/v1/no-auth/resource/api/dataset/03D452C9-B893-4C58-A872-A9D73B58F27F/resource/A6E0ECEB-E8D4-4A7D-B47F-AFC48734F69B/download",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "d1370b7d5c9e090971df44eab4ba8d7ec35891a514413a25814993f4f8246afa",
+      "bytes": 1069715,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/73232 https://data.gov.tw/dataset/7442"
+    }
+  }
+}

@@ -1,27 +1,64 @@
-# 行政區 Administrative
+# 行政區
 
-本分類的資料來源、檔案對應與使用限制統一記錄於本文件。
+國土測繪中心縣市界供搜尋、區域篩選及圖資裁切使用。來源與授權見 [政府資料開放平臺](https://data.gov.tw/dataset/7442)。
 
-- 發布機關：內政部國土測繪中心；透過 TGOS 取得原始圖資。
-- 取得方式：本地固定資料，隨專案部署；人工執行更新才重新取得，沒有排程更新或更新時間偵測。
-- 名稱、資料身分、檔案路徑與授權核對紀錄由 [manifest.json](../manifest.json) 統一定義。
+## 模組定位
 
-## 主題與檔案
+行政區提供 GIS 共用的縣市範圍與搜尋索引。資料集的縣市筆數及裁切圖磚由產製流程寫入各自分類；瀏覽器載入時將這些筆數與縣市索引合併。
 
-| 資料用途 | 資料檔案 | 資料類型 | 新增日期／更新方式 |
-| --- | --- | --- | --- |
-| 縣市界 Counties | [counties.geojson](counties/counties.geojson) | GeoJSON／EPSG:4326；縣市範圍面，共 22 筆 | 2026-10-09 |
-| 縣市索引 | [index.json](counties/index.json) | JSON；縣碼、名稱、EPSG:4326 範圍座標及各圖資筆數，共 22 筆 | 2026-10-09 |
+## 主要功能
 
-## 縣市界 Counties
+- 產製縣碼、名稱、座標範圍與縣市面幾何。
+- 提供縣市搜尋、範圍條件與資料集裁切基準。
+- 以共用 GEOS 裁切建立區域資產及縣市筆數。
 
-- 主題目錄：`counties/`；界線資料 ID：`tw-admin-counties`；索引資料 ID：`tw-admin-index`。
-- 原始格式：ZIP／SHP（直轄市、縣市界線 1140318）。
-- 原始來源：[TGOS 原始界線下載](https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip)。
-- 界線授權依據：[政府資料開放平臺資料說明](https://data.gov.tw/dataset/7442)。
+## 模組架構
 
-22 個縣市作為搜尋、區域條件與圖資裁切的共用支援資料，沒有獨立圖層開關。完整界線保留原始精度；`index.json` 由縣市界及各圖資筆數產製，相關來源與授權分別記錄於各分類文件及 manifest。索引中的筆數屬目前本地資料，不是即時統計。
+### 目錄結構
 
-## 維護方式
+```text
+public/gis/administrative/
+├── manifest.json                # 產生的分類資料與服務契約
+├── counties/                    # 縣市界與搜尋索引
+└── readme.md                    # 分類說明與維護入口
+```
 
-原始版本與日期維持既有紀錄，來源未提供的日期不推算。人工更新使用 `pnpm gis:refresh`；`--rebuild` 從本地完整資料重建索引及衍生資產，不重新下載。縣市衍生圖磚放在各自主題資料夾；本分類說明集中維護於本文件。
+### 資料流程
+
+```text
+官方縣市 SHP → administrative/datasets.mjs
+    → counties.geojson + index.json
+    → AdministrativeRegions → 搜尋 / 縣市篩選
+縣市界 + 主題完整向量 → 共用裁切 → 各分類區域資產與筆數
+```
+
+## 主要資料
+
+| 檔案                                          | 內容                                                            |
+| --------------------------------------------- | --------------------------------------------------------------- |
+| [counties.geojson](counties/counties.geojson) | 縣市面幾何                                                      |
+| [index.json](counties/index.json)             | 縣碼、名稱與座標範圍；各資料集的縣市筆數保存於所屬分類 manifest |
+
+縣市幾何與索引以縣碼連接；[MapGeometry](../../../src/gis/data/MapGeometry.ts) 同時供發布前裁切及瀏覽器空間查詢使用。
+
+## 邊界
+
+- 縣市界使用於查詢範圍與地圖輪廓；主題圖層的外觀及 3D 顯示由各圖層與共用 Renderer 管理。
+- 各資料集的縣市統計位於所屬分類 manifest，透過縣市界雜湊連接裁切版本。
+
+## 依賴方向
+
+箭頭表示「使用者 → 被依賴模組」。
+
+```text
+refresh → administrative/datasets → shared/source + MapGeometry
+AdministrativeRegions → GisAssetLoader / GisSnapshot → 本分類資產與 manifest
+```
+
+共用資料契約、查詢與渲染入口見 [GIS 模組](../../../src/gis/README.md)。
+
+## 更新入口
+
+[資料定義](../../../scripts/gis/administrative/catalog.mjs) · [轉接與裁切](../../../scripts/gis/administrative/datasets.mjs) · [資產紀錄](manifest.json)
+
+更新：`pnpm gis:refresh`。

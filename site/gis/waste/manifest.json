@@ -1,0 +1,699 @@
+{
+  "schemaVersion": 3,
+  "id": "47acf5825bce17b2d7bc",
+  "label": "廢棄物 Waste",
+  "topics": {
+    "moenv-incinerators": {
+      "directory": "waste/incinerators",
+      "label": "焚化爐 Incinerator",
+      "delivery": "local"
+    },
+    "moenv-landfills": {
+      "directory": "waste/landfills",
+      "label": "衛生掩埋場 Landfill",
+      "delivery": "local"
+    },
+    "moenv-coastal-landfills": {
+      "directory": "waste/coastal-landfills",
+      "label": "濱海掩埋場 Coastal",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "moenv-incinerators": {
+      "topic": "moenv-incinerators",
+      "kind": "point",
+      "displayAssetId": "moenv-incinerators",
+      "analysisAssetId": "moenv-incinerators",
+      "countyFilter": true,
+      "sourceName": "環境部環境管理署",
+      "attribution": "© <a href=\"https://data.moenv.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">環境部環境管理署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原資料測站編號"
+        },
+        {
+          "property": "address",
+          "label": "地址"
+        },
+        {
+          "property": "telephone",
+          "label": "電話"
+        }
+      ],
+      "countyCounts": {
+        "10002": 1,
+        "10004": 0,
+        "10005": 1,
+        "10007": 1,
+        "10008": 0,
+        "10009": 0,
+        "10010": 1,
+        "10013": 1,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 1,
+        "10018": 1,
+        "10020": 1,
+        "63000": 3,
+        "64000": 4,
+        "65000": 3,
+        "66000": 3,
+        "67000": 2,
+        "68000": 1,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "moenv-landfills": {
+      "topic": "moenv-landfills",
+      "kind": "point",
+      "displayAssetId": "moenv-landfills",
+      "analysisAssetId": "moenv-landfills",
+      "countyFilter": true,
+      "sourceName": "環境部環境管理署",
+      "attribution": "© <a href=\"https://data.moenv.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">環境部環境管理署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方項次"
+        },
+        {
+          "property": "county",
+          "label": "來源縣市"
+        },
+        {
+          "property": "township",
+          "label": "來源鄉鎮市區"
+        },
+        {
+          "property": "statistical_date",
+          "label": "統計日期"
+        },
+        {
+          "property": "design_capacity_m3",
+          "label": "設計容量",
+          "unit": "m³"
+        },
+        {
+          "property": "remaining_capacity_m3",
+          "label": "剩餘容量",
+          "unit": "m³"
+        }
+      ],
+      "countyCounts": {
+        "10002": 3,
+        "10004": 3,
+        "10005": 9,
+        "10007": 2,
+        "10008": 6,
+        "10009": 12,
+        "10010": 4,
+        "10013": 2,
+        "10014": 13,
+        "10015": 10,
+        "10016": 10,
+        "10017": 0,
+        "10018": 1,
+        "10020": 0,
+        "63000": 1,
+        "64000": 3,
+        "65000": 1,
+        "66000": 5,
+        "67000": 8,
+        "68000": 7,
+        "09007": 5,
+        "09020": 2
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "moenv-coastal-landfills": {
+      "topic": "moenv-coastal-landfills",
+      "kind": "point",
+      "displayAssetId": "moenv-coastal-landfills",
+      "analysisAssetId": "moenv-coastal-landfills",
+      "countyFilter": true,
+      "sourceName": "環境部環境管理署",
+      "attribution": "© <a href=\"https://data.moenv.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">環境部環境管理署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方項次"
+        },
+        {
+          "property": "county",
+          "label": "來源縣市"
+        },
+        {
+          "property": "township",
+          "label": "來源鄉鎮市區"
+        },
+        {
+          "property": "status",
+          "label": "原資料現況"
+        },
+        {
+          "property": "ocean",
+          "label": "濱臨海洋"
+        },
+        {
+          "property": "distance_m",
+          "label": "官方濱海距離",
+          "unit": "m"
+        },
+        {
+          "property": "address",
+          "label": "地址"
+        },
+        {
+          "property": "land_parcel",
+          "label": "地號"
+        },
+        {
+          "property": "manager",
+          "label": "管理單位"
+        }
+      ],
+      "countyCounts": {
+        "10002": 1,
+        "10004": 0,
+        "10005": 1,
+        "10007": 5,
+        "10008": 0,
+        "10009": 0,
+        "10010": 0,
+        "10013": 3,
+        "10014": 0,
+        "10015": 0,
+        "10016": 8,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 0,
+        "64000": 3,
+        "65000": 1,
+        "66000": 0,
+        "67000": 1,
+        "68000": 2,
+        "09007": 2,
+        "09020": 2
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    }
+  },
+  "assets": {
+    "moenv-incinerators": {
+      "topic": "moenv-incinerators",
+      "file": "waste/incinerators/incinerators.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://data.moenv.gov.tw/api/v2/gisepa_p_11?api_key=846e44e1-8cc5-4893-ad87-c79d2d383706&format=JSON&limit=1000&sort=ImportDate+desc",
+      "importedAt": "2026-10-09",
+      "sha256": "578f5882d731fd3c64bcd2cdbc530c393c3a09d3668af4c65b0c4f3bf95fabfa",
+      "bytes": 7386,
+      "featureCount": 24,
+      "analysis": {
+        "datasetId": "moenv-incinerators",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "A4000283",
+              "A4200130",
+              "A4400916",
+              "B2402442",
+              "C1600321",
+              "D3202577",
+              "E5002890",
+              "E5602998",
+              "F0501686",
+              "F0703948",
+              "F2300972",
+              "G3801239",
+              "H4307715",
+              "I2604550",
+              "K7107366",
+              "L0056153",
+              "L9201289",
+              "N3201030",
+              "O1708678",
+              "Q7504010",
+              "R1407702",
+              "S1602755",
+              "S2202553",
+              "T5900246"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "嘉義市垃圾焚化廠",
+              "嘉義縣鹿草垃圾焚化廠",
+              "基隆市天外天垃圾資源回收(焚化)廠",
+              "宜蘭縣利澤垃圾資源回收(焚化)廠",
+              "屏東縣崁頂垃圾資源回收(焚化)廠",
+              "彰化縣溪州垃圾焚化廠",
+              "新北市八里垃圾焚化廠",
+              "新北市新店垃圾焚化廠",
+              "新北市樹林垃圾焚化廠",
+              "新竹市垃圾資源回收廠",
+              "桃園市垃圾焚化廠",
+              "臺中市后里資源回收廠",
+              "臺中市文山垃圾焚化廠",
+              "臺中市烏日資源回收廠",
+              "臺北市政府環境保護局內湖垃圾焚化廠",
+              "臺北市政府環境保護局北投垃圾焚化廠",
+              "臺北市政府環境保護局木柵垃圾焚化廠",
+              "臺南市城西垃圾焚化廠",
+              "臺南市永康垃圾資源回收(焚化)廠",
+              "苗栗縣垃圾焚化廠",
+              "高雄市仁武垃圾資源回收(焚化)廠",
+              "高雄市岡山垃圾資源回收(焚化)廠",
+              "高雄市政府環境保護局中區資源回收廠",
+              "高雄市政府環境保護局南區資源回收廠"
+            ]
+          },
+          "address": {
+            "type": "string",
+            "values": [
+              "嘉義市西區湖內里湖子內路741號",
+              "嘉義縣鹿草鄉豐稠村馬稠後農場60號",
+              "基隆市信義區東光里培德路223號",
+              "宜蘭縣五結鄉利工二路100號",
+              "屏東縣崁頂鄉中正路881號",
+              "彰化縣溪州鄉水尾村彰水路一段臨1號",
+              "新北市八里區下罟子65號",
+              "新北市新店區薏仁坑路自強巷1號",
+              "新北市樹林區中山路三段212號",
+              "新竹市北區海濱路240號",
+              "桃園市中壢區松江北路16號",
+              "臺中市南屯區文山南巷500號",
+              "臺中市后里區堤防路556號",
+              "臺中市烏日區東園村11鄰慶光路800號",
+              "臺北市內湖區安康路290號",
+              "臺北市北投區洲美街271號",
+              "臺北市文山區木柵路五段53號",
+              "臺南市安南區城西街三段1105巷121弄150號",
+              "臺南市永康區王行東路168號",
+              "苗栗縣竹南鎮保安林25之60號",
+              "高雄市三民區鼎金一巷15號",
+              "高雄市仁武區烏林村仁安二巷100號",
+              "高雄市小港區北林路6號",
+              "高雄市岡山區本洲里本工五路9號"
+            ]
+          },
+          "telephone": {
+            "type": "string",
+            "values": [
+              "(02)22142022",
+              "(02)22300800",
+              "(02)24658632",
+              "(02)26195111",
+              "(02)26808217",
+              "(02)27961833",
+              "(02)28360050",
+              "(03)4511111",
+              "(03)5368920",
+              "(03)9909228",
+              "(037)484380",
+              "(04)23359155",
+              "(04)23861019",
+              "(04)25582595",
+              "(04)8899411",
+              "(05)2365669",
+              "(05)3621101",
+              "(06)2319266",
+              "(06)2570313",
+              "(07)3743855",
+              "(07)3909400",
+              "(07)6241168",
+              "(07)8069750",
+              "(08)8634474"
+            ]
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "A4000283",
+              "A4200130",
+              "A4400916",
+              "B2402442",
+              "C1600321",
+              "D3202577",
+              "E5002890",
+              "E5602998",
+              "F0501686",
+              "F0703948",
+              "F2300972",
+              "G3801239",
+              "H4307715",
+              "I2604550",
+              "K7107366",
+              "L0056153",
+              "L9201289",
+              "N3201030",
+              "O1708678",
+              "Q7504010",
+              "R1407702",
+              "S1602755",
+              "S2202553",
+              "T5900246"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/8341"
+    },
+    "moenv-landfills": {
+      "topic": "moenv-landfills",
+      "file": "waste/landfills/landfills.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://data.moenv.gov.tw/api/v2/fac_p_02?api_key=4c89a32a-a214-461b-bf29-30ff32a61a8a&format=JSON&limit=1000&sort=ImportDate+desc",
+      "importedAt": "2026-10-09",
+      "sha256": "a24f57905fc552738614656a2f033e6070d87c20da91907194edf19f6b08b28c",
+      "bytes": 36316,
+      "featureCount": 107,
+      "analysis": {
+        "datasetId": "moenv-landfills",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義縣",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "澎湖縣",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "臺東縣",
+              "花蓮縣",
+              "苗栗縣",
+              "連江縣",
+              "金門縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "township": {
+            "type": "string"
+          },
+          "statistical_date": {
+            "type": "string",
+            "values": ["2025/6/30"]
+          },
+          "design_capacity_m3": {
+            "type": "number"
+          },
+          "remaining_capacity_m3": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9370"
+    },
+    "moenv-coastal-landfills": {
+      "topic": "moenv-coastal-landfills",
+      "file": "waste/coastal-landfills/coastal-landfills.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://data.moenv.gov.tw/api/v2/stat_p_113?api_key=846e44e1-8cc5-4893-ad87-c79d2d383706&format=JSON&limit=1000&sort=ImportDate+desc",
+      "importedAt": "2026-10-09",
+      "sha256": "e7e0673f522a07ff97a5a7dddf7efae820738e5324fe56341ca67eccf19cbcfb",
+      "bytes": 12384,
+      "featureCount": 29,
+      "analysis": {
+        "datasetId": "moenv-coastal-landfills",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "1",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "2",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "七美鄉第一衛生掩埋場",
+              "七股區龍山垃圾掩埋場",
+              "五結鄉垃圾衛生掩埋場",
+              "南竿鄉垃圾衛生掩埋場",
+              "大園區北港垃圾掩埋場",
+              "大林蒲垃圾衛生掩埋場",
+              "後龍鎮衛生掩埋場",
+              "望安鄉將軍衛生掩埋場",
+              "梓官區垃圾衛生掩埋場",
+              "淡水區簡易垃圾掩埋場",
+              "湖西鄉東石段掩埋場(東石環保公園)",
+              "湖西鄉紅羅衛生掩埋場",
+              "琉球鄉大福垃圾復育場",
+              "琉球鄉天福垃圾復育場",
+              "白沙鄉吉貝村垃圾衛生掩埋場",
+              "白沙鄉大倉垃圾掩埋場",
+              "白沙鄉岐頭衛生掩埋場",
+              "白沙鄉鳥嶼垃圾掩埋場",
+              "線西鄉彰濱工業區臨時衛生掩埋場",
+              "芳苑鄉福興地區區域性垃圾聯合衛生掩埋場",
+              "芳苑鄉福興地區區域性垃圾聯合衛生掩埋場（復育區）",
+              "茄萣區垃圾衛生掩埋場",
+              "莒光鄉西莒衛生掩埋場",
+              "觀音區保障垃圾衛生掩埋場",
+              "車城鄉垃圾掩埋場",
+              "金城鎮赤山垃圾衛生掩埋場",
+              "金湖鎮新塘掩埋場",
+              "鹿港鎮彰濱衛生掩埋場",
+              "鹿港鎮東石衛生掩埋場"
+            ]
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "桃園市",
+              "澎湖縣",
+              "臺南市",
+              "苗栗縣",
+              "連江縣",
+              "金門縣",
+              "高雄市"
+            ]
+          },
+          "township": {
+            "type": "string",
+            "values": [
+              "七美鄉",
+              "七股區",
+              "五結鄉",
+              "南竿鄉",
+              "大園區",
+              "小港區",
+              "彌陀區",
+              "後龍鎮",
+              "望安鄉",
+              "淡水區",
+              "湖西鄉",
+              "琉球鄉",
+              "白沙鄉",
+              "線西鄉",
+              "芳苑鄉",
+              "茄萣區",
+              "莒光鄉",
+              "觀音區",
+              "車城鄉",
+              "金城鎮",
+              "金湖鎮",
+              "鹿港鎮"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "values": ["停用", "封閉", "復育", "營運中"]
+          },
+          "ocean": {
+            "type": "string",
+            "values": [
+              "中港溪出海口",
+              "太平洋",
+              "東海",
+              "臺灣海峽",
+              "臺灣海峽\n（東海與南海間）"
+            ]
+          },
+          "distance_m": {
+            "type": "number"
+          },
+          "address": {
+            "type": "string",
+            "values": [
+              "位於大福村大福漁港之北側，環島公路旁",
+              "位於天福村，環島公路旁",
+              "淡水區下圭柔山 91之7號旁",
+              "湖西鄉紅羅村12鄰129號",
+              "無",
+              "白沙鄉吉貝村27-9號",
+              "白沙鄉大倉村22-1號",
+              "白沙鄉岐頭村51-4號",
+              "白沙鄉鳥嶼村46-1號",
+              "金湖鎮新塘100號",
+              "金門縣金城鎮小古崗100號"
+            ]
+          },
+          "land_parcel": {
+            "type": "string",
+            "values": [
+              "七美鄉大嶼段原4806地號",
+              "七股區下山子寮段379-4地號",
+              "五結鄉利工段9地號",
+              "南竿鄉復興段2225、2226、2548、2548-2等13筆地號",
+              "小港區南星段2-2、2-3、2-5、2-7~2-10號",
+              "屏東縣車城鄉海口段442地號",
+              "彌陀區南庄段1099、1101、1103、1104、1123地號",
+              "後龍鎮海寶里苦苓腳段5118-14、15、18等三筆",
+              "望安鄉將軍段859地號",
+              "淡水區下圭柔山段570-1、570-2、571-1、571-2、571-3、494-2、494-3地號",
+              "湖西鄉東石新段1、2、9地號",
+              "湖西鄉紅羅罩段2380-1地號等16筆",
+              "無",
+              "白沙鄉吉貝段 2-11地號",
+              "白沙鄉大倉段126-0005地號",
+              "白沙鄉岐頭段1、11-1、11-2、11-10、11-12、11-13、11-14、11-17地號",
+              "白沙鄉鳥嶼段1-1地號",
+              "線西鄉西興段50，26地號",
+              "芳苑鄉漢寶園段1079地號",
+              "芳苑鄉漢寶園段1081號",
+              "茄萣區白雲段1156、1157、1168~1170、1222、1237~1240、1246、1246-2、1248地號",
+              "草漯段2529-0000、2530-0000等5筆地號",
+              "莒光鄉田沃村田沃段25、1122、1124、1125、1126地號",
+              "許厝港段1224-0000、1225-0000等20筆地號",
+              "金城鎮珠山段1404-1號",
+              "金湖鎮料羅段152-1地號",
+              "鹿港鎮東石段1124.1125.1126.1127地號",
+              "鹿港鎮鹿工段0001地號"
+            ]
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "七美鄉公所",
+              "五結鄉公所",
+              "後龍鎮公所",
+              "新北市政府環境保護局",
+              "望安鄉公所",
+              "桃園市政府環境保護局",
+              "湖西鄉公所",
+              "琉球鄉公所",
+              "白沙鄉公所",
+              "線西鄉公所",
+              "臺南市政府環境保護局",
+              "臺灣港務公司",
+              "芳苑鄉公所",
+              "車城鄉公所",
+              "連江縣環境資源局",
+              "金城鎮公所",
+              "金湖鎮公所",
+              "高雄市政府環境保護局",
+              "鹿港鎮公所"
+            ]
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "1",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "2",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moenv.gov.tw/dataset/detail/STAT_P_113"
+    }
+  }
+}

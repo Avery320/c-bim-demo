@@ -1,0 +1,889 @@
+{
+  "schemaVersion": 3,
+  "id": "58161898380500b44a5f",
+  "label": "水資源 Water",
+  "topics": {
+    "wra-basins": {
+      "directory": "water/basins",
+      "label": "流域 Basin",
+      "delivery": "local"
+    },
+    "wra-river-channel": {
+      "directory": "water/rivers",
+      "label": "河川 River",
+      "delivery": "local"
+    },
+    "wra-reservoir-water": {
+      "directory": "water/reservoirs",
+      "label": "水庫集水區 Reservoir Catchments",
+      "delivery": "local"
+    },
+    "wra-reservoir-water-dam": {
+      "directory": "water/reservoirs",
+      "label": "水庫壩體 Reservoir Dams",
+      "delivery": "local"
+    },
+    "tw-detention-basins": {
+      "directory": "water/detention-basins",
+      "label": "滯洪池點位 Detention",
+      "delivery": "local"
+    },
+    "wra-river-level-stations": {
+      "directory": "water/river-level-stations",
+      "label": "河川水位測站位置",
+      "delivery": "local"
+    },
+    "wra-groundwater-wells": {
+      "directory": "water/groundwater-wells",
+      "label": "地下水觀測井位置",
+      "delivery": "local"
+    },
+    "wra-flood-650mm-24h": {
+      "directory": "water/flood-potential",
+      "label": "淹水潛勢 Flood 650mm/24h",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "wra-basins": {
+      "topic": "wra-basins",
+      "kind": "area",
+      "displayAssetId": "wra-basins",
+      "analysisAssetId": "wra-basins",
+      "regionalAssetId": "wra-basins-by-county",
+      "tileLayer": "basins",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "流域代碼"
+        }
+      ],
+      "countyCounts": {
+        "10002": 17,
+        "10004": 13,
+        "10005": 12,
+        "10007": 5,
+        "10008": 12,
+        "10009": 6,
+        "10010": 9,
+        "10013": 29,
+        "10014": 33,
+        "10015": 23,
+        "10016": 0,
+        "10017": 4,
+        "10018": 3,
+        "10020": 2,
+        "63000": 6,
+        "64000": 10,
+        "65000": 29,
+        "66000": 9,
+        "67000": 8,
+        "68000": 17,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-river-level-stations": {
+      "topic": "wra-river-level-stations",
+      "kind": "point",
+      "displayAssetId": "wra-river-level-stations",
+      "analysisAssetId": "wra-river-level-stations",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "測站代碼"
+        },
+        {
+          "property": "STATUS",
+          "label": "狀態"
+        },
+        {
+          "property": "ADDR_C",
+          "label": "位置"
+        }
+      ],
+      "countyCounts": {
+        "10002": 10,
+        "10004": 17,
+        "10005": 31,
+        "10007": 4,
+        "10008": 26,
+        "10009": 11,
+        "10010": 15,
+        "10013": 13,
+        "10014": 10,
+        "10015": 13,
+        "10016": 0,
+        "10017": 9,
+        "10018": 6,
+        "10020": 4,
+        "63000": 18,
+        "64000": 23,
+        "65000": 62,
+        "66000": 26,
+        "67000": 43,
+        "68000": 8,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-groundwater-wells": {
+      "topic": "wra-groundwater-wells",
+      "kind": "point",
+      "displayAssetId": "wra-groundwater-wells",
+      "analysisAssetId": "wra-groundwater-wells",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "觀測井代碼"
+        },
+        {
+          "property": "是否現",
+          "label": "狀態"
+        }
+      ],
+      "countyCounts": {
+        "10002": 39,
+        "10004": 18,
+        "10005": 33,
+        "10007": 90,
+        "10008": 14,
+        "10009": 121,
+        "10010": 46,
+        "10013": 107,
+        "10014": 21,
+        "10015": 32,
+        "10016": 0,
+        "10017": 0,
+        "10018": 8,
+        "10020": 0,
+        "63000": 9,
+        "64000": 59,
+        "65000": 19,
+        "66000": 35,
+        "67000": 117,
+        "68000": 36,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-river-polygons": {
+      "topic": "wra-river-channel",
+      "kind": "area",
+      "displayAssetId": "wra-river-polygons",
+      "analysisAssetId": "wra-river-polygons-analysis",
+      "regionalAssetId": "wra-river-polygons-by-county",
+      "tileLayer": "river_polygons",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "titleProperty": "river_name",
+      "fields": [],
+      "countyCounts": {
+        "10002": 488,
+        "10004": 648,
+        "10005": 901,
+        "10007": 513,
+        "10008": 1093,
+        "10009": 604,
+        "10010": 836,
+        "10013": 942,
+        "10014": 451,
+        "10015": 651,
+        "10016": 0,
+        "10017": 184,
+        "10018": 133,
+        "10020": 56,
+        "63000": 363,
+        "64000": 1109,
+        "65000": 1189,
+        "66000": 1251,
+        "67000": 1595,
+        "68000": 1155,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-reservoirs": {
+      "topic": "wra-reservoir-water",
+      "kind": "area",
+      "displayAssetId": "wra-reservoirs",
+      "analysisAssetId": "wra-reservoirs",
+      "regionalAssetId": "wra-reservoirs-by-county",
+      "tileLayer": "reservoirs",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "label": "水庫集水區（面）",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "圖徵代碼"
+        }
+      ],
+      "countyCounts": {
+        "10002": 7,
+        "10004": 12,
+        "10005": 12,
+        "10007": 0,
+        "10008": 20,
+        "10009": 2,
+        "10010": 12,
+        "10013": 4,
+        "10014": 2,
+        "10015": 10,
+        "10016": 8,
+        "10017": 2,
+        "10018": 0,
+        "10020": 2,
+        "63000": 0,
+        "64000": 11,
+        "65000": 12,
+        "66000": 11,
+        "67000": 13,
+        "68000": 6,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-dams": {
+      "topic": "wra-reservoir-water-dam",
+      "kind": "point",
+      "displayAssetId": "wra-dams",
+      "analysisAssetId": "wra-dams",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "label": "水庫壩體（點）",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "name_en",
+          "label": "英文名稱"
+        },
+        {
+          "property": "dam_height_m",
+          "label": "壩高",
+          "unit": "m"
+        }
+      ],
+      "countyCounts": {
+        "10002": 1,
+        "10004": 4,
+        "10005": 6,
+        "10007": 0,
+        "10008": 9,
+        "10009": 1,
+        "10010": 3,
+        "10013": 3,
+        "10014": 1,
+        "10015": 5,
+        "10016": 7,
+        "10017": 2,
+        "10018": 0,
+        "10020": 1,
+        "63000": 0,
+        "64000": 7,
+        "65000": 8,
+        "66000": 6,
+        "67000": 10,
+        "68000": 3,
+        "09007": 8,
+        "09020": 13
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "tw-detention-basins": {
+      "topic": "tw-detention-basins",
+      "kind": "point",
+      "displayAssetId": "tw-detention-basins",
+      "analysisAssetId": "tw-detention-basins",
+      "countyFilter": true,
+      "sourceName": "臺南市政府水利局／桃園市政府水務局",
+      "attribution": "© <a href=\"https://data.gov.tw/dataset/108523\" target=\"_blank\" rel=\"noopener noreferrer\">臺南市政府水利局</a>、<a href=\"https://data.gov.tw/dataset/152950\" target=\"_blank\" rel=\"noopener noreferrer\">桃園市政府水務局</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "county",
+          "label": "縣市"
+        },
+        {
+          "property": "area_m2",
+          "label": "資料提供面積",
+          "unit": "m²"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 0,
+        "10005": 0,
+        "10007": 0,
+        "10008": 0,
+        "10009": 0,
+        "10010": 0,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 0,
+        "64000": 0,
+        "65000": 0,
+        "66000": 0,
+        "67000": 45,
+        "68000": 25,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "wra-flood-650mm-24h": {
+      "topic": "wra-flood-650mm-24h",
+      "kind": "area",
+      "displayAssetId": "wra-flood-650mm-24h",
+      "analysisAssetId": "wra-flood-650mm-24h-analysis",
+      "regionalAssetId": "wra-flood-650mm-24h-by-county",
+      "tileLayer": "flood_650mm_24hr",
+      "countyFilter": true,
+      "sourceName": "經濟部水利署",
+      "attribution": "© <a href=\"https://gic.wra.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部水利署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "scenario",
+          "label": "降雨情境"
+        },
+        {
+          "property": "depth",
+          "label": "模擬深度級距"
+        },
+        {
+          "property": "depth_class",
+          "label": "官方深度分級",
+          "query": "string"
+        },
+        {
+          "property": "county",
+          "label": "原資料縣市"
+        },
+        {
+          "property": "township",
+          "label": "原資料鄉鎮市區"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本"
+        },
+        {
+          "property": "source_row",
+          "label": "原檔列號",
+          "query": false
+        },
+        {
+          "property": "depth_original",
+          "label": "異常原始深度文字"
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 62,
+        "10004": 73,
+        "10005": 85,
+        "10007": 142,
+        "10008": 57,
+        "10009": 252,
+        "10010": 461,
+        "10013": 215,
+        "10014": 91,
+        "10015": 80,
+        "10016": 26,
+        "10017": 185,
+        "10018": 31,
+        "10020": 130,
+        "63000": 92,
+        "64000": 206,
+        "65000": 151,
+        "66000": 119,
+        "67000": 271,
+        "68000": 83,
+        "09007": 18,
+        "09020": 21
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    }
+  },
+  "assets": {
+    "wra-basins": {
+      "topic": "wra-basins",
+      "file": "water/basins/basins.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:BASIN",
+      "importedAt": "2026-10-09",
+      "sha256": "2e200c94033ac5c554c2799a22e62686a8abb754e7b88d734e2da6308188f475",
+      "bytes": 4815742,
+      "featureCount": 143,
+      "analysis": {
+        "datasetId": "wra-basins",
+        "geometryTypes": ["MultiPolygon"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9823"
+    },
+    "wra-basins-by-county": {
+      "topic": "wra-basins",
+      "file": "water/basins/basins-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:BASIN",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "7ca7d420c42e112937b4c9873a63097c97d90d8df9ab31f3467af56615b3a337",
+      "bytes": 3640612,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9823 https://data.gov.tw/dataset/7442"
+    },
+    "wra-river-level-stations": {
+      "topic": "wra-river-level-stations",
+      "file": "water/river-level-stations/river-level-stations.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:RIVWLSTA_e",
+      "importedAt": "2026-10-09",
+      "sha256": "7ed68fec44becf120126a69884e99633da94cac820a73dbe99a58b5945c01ab4",
+      "bytes": 96057,
+      "featureCount": 349,
+      "analysis": {
+        "datasetId": "wra-river-level-stations",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "STATUS": {
+            "type": "string",
+            "values": ["現存"]
+          },
+          "ADDR_C": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25784"
+    },
+    "wra-groundwater-wells": {
+      "topic": "wra-groundwater-wells",
+      "file": "water/groundwater-wells/groundwater-wells.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:gwobwell_e",
+      "importedAt": "2026-10-09",
+      "sha256": "9ea07ae5d7db0cf389c00164936403d7d009a9dec37defd2f7d554e0650956c4",
+      "bytes": 208605,
+      "featureCount": 804,
+      "analysis": {
+        "datasetId": "wra-groundwater-wells",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "是否現": {
+            "type": "string",
+            "values": ["現存"]
+          },
+          "地下水": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/32725"
+    },
+    "wra-river-polygons": {
+      "topic": "wra-river-channel",
+      "file": "water/rivers/rivers.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:RIVERPOLY",
+      "importedAt": "2026-10-09",
+      "sha256": "b769a1acb698b363d8bf0b18db37437bc8b743dede115b41226024492957d447",
+      "bytes": 10598573,
+      "omittedFeatures": [
+        {
+          "id": "RIVERPOLY.5119",
+          "reason": "GEOS MakeValid 後沒有面成分，排除零面積資料"
+        }
+      ],
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25781"
+    },
+    "wra-river-polygons-analysis": {
+      "topic": "wra-river-channel",
+      "file": "water/rivers/rivers.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:RIVERPOLY",
+      "importedAt": "2026-10-09",
+      "sha256": "66198bc87324ffb0471e10d03dd59cf22eccbeceb3ee63b205db916107da17d0",
+      "bytes": 13619191,
+      "featureCount": 13261,
+      "omittedFeatures": [
+        {
+          "id": "RIVERPOLY.5119",
+          "reason": "GEOS MakeValid 後沒有面成分，排除零面積資料"
+        }
+      ],
+      "analysis": {
+        "datasetId": "wra-river-polygons-analysis",
+        "geometryTypes": ["MultiPolygon"],
+        "fields": {
+          "river_name": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25781"
+    },
+    "wra-river-polygons-by-county": {
+      "topic": "wra-river-channel",
+      "file": "water/rivers/rivers-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:RIVERPOLY",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "b19067bc4e0deed85e06a03f78218176c331315cc39e7608f9f9917aad2c6717",
+      "bytes": 10951104,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25781 https://data.gov.tw/dataset/7442"
+    },
+    "wra-reservoirs": {
+      "topic": "wra-reservoir-water",
+      "file": "water/reservoirs/reservoir-catchments.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:reservoir",
+      "importedAt": "2026-10-09",
+      "sha256": "57e3a0c6888fa559e97164ca3617f839048292b975400b3a1be3cb927ba7dbb0",
+      "bytes": 4834098,
+      "featureCount": 80,
+      "analysis": {
+        "datasetId": "wra-reservoirs",
+        "geometryTypes": ["MultiPolygon"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/129474"
+    },
+    "wra-reservoirs-by-county": {
+      "topic": "wra-reservoir-water",
+      "file": "water/reservoirs/reservoir-catchments-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://maps.wra.gov.tw/arcgis/services/WMS/GIC_WMS/MapServer/WFSServer?TYPENAMES=WMS_GIC_WMS:reservoir",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "8835f5af5c8eed9c33abb56c17962384e12a9700c55e96bf1be3880c25aed21d",
+      "bytes": 1703900,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/129474 https://data.gov.tw/dataset/7442"
+    },
+    "wra-dams": {
+      "topic": "wra-reservoir-water-dam",
+      "file": "water/reservoirs/reservoir-dams.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://gic.wra.gov.tw/gis/gic/API/Google/DownLoad.aspx?fname=SWRESOIR&filetype=SHP",
+      "importedAt": "2026-10-09",
+      "sha256": "a25f7b5b41510d7181ed4f3b9dd562150e8361362b71e2fd866fd0b534a25c9c",
+      "bytes": 23515,
+      "featureCount": 98,
+      "analysis": {
+        "datasetId": "wra-dams",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "name_en": {
+            "type": "string"
+          },
+          "dam_height_m": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25776"
+    },
+    "tw-detention-basins": {
+      "topic": "tw-detention-basins",
+      "file": "water/detention-basins/detention-basins.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": [
+        "https://soa.tainan.gov.tw/Api/Service/Get/fabe9ae6-a046-4346-9b4d-60b037fdb91b",
+        "https://opendata.tycg.gov.tw/api/dataset/b99ce968-1bd4-4fbb-89ea-c4a597285cb8/resource/17b5306b-33ba-4ba5-b631-e96c8153b3fb/download"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "58004fe8d53a948a9fa03ea307c9aaf7b0d8bc6adc4236f92134ebc03c487590",
+      "bytes": 17002,
+      "featureCount": 70,
+      "analysis": {
+        "datasetId": "tw-detention-basins",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": ["桃園市", "臺南市"]
+          },
+          "area_m2": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/108523 https://data.gov.tw/dataset/152950"
+    },
+    "wra-flood-650mm-24h": {
+      "topic": "wra-flood-650mm-24h",
+      "file": "water/flood-potential/flood-potential-650mm-24h.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://gic.wra.gov.tw/gis/gic/API/Google/DownLoad.aspx?fname=flood_650mm_24hr&filetype=SHP",
+      "importedAt": "2026-10-09",
+      "sha256": "2b484f09fdb703df12814ff2611fe50b97e1ae691992ef702f4b0573cfbae941",
+      "bytes": 25677972,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25766"
+    },
+    "wra-flood-650mm-24h-analysis": {
+      "topic": "wra-flood-650mm-24h",
+      "file": "water/flood-potential/flood-potential-650mm-24h.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://gic.wra.gov.tw/gis/gic/API/Google/DownLoad.aspx?fname=flood_650mm_24hr&filetype=SHP",
+      "importedAt": "2026-10-09",
+      "sha256": "ad60de47ade431210e118f9583d3598197a3b83534b49a98dcef087f694ee443",
+      "bytes": 48610381,
+      "featureCount": 2356,
+      "analysis": {
+        "datasetId": "wra-flood-650mm-24h-analysis",
+        "geometryTypes": ["MultiPolygon", "Polygon"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義市",
+              "嘉義縣",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "澎湖縣",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "臺東縣",
+              "花蓮縣",
+              "苗栗縣",
+              "連江縣",
+              "金門縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "original_county_code": {
+            "type": "string",
+            "values": [
+              "09007",
+              "09020",
+              "10002",
+              "10004",
+              "10005",
+              "10007",
+              "10008",
+              "10009",
+              "10010",
+              "10013",
+              "10014",
+              "10015",
+              "10016",
+              "10017",
+              "10018",
+              "10020",
+              "63000",
+              "64000",
+              "65000",
+              "66000",
+              "67000",
+              "68000"
+            ]
+          },
+          "township": {
+            "type": "string"
+          },
+          "township_code": {
+            "type": "string"
+          },
+          "depth_class": {
+            "type": "number"
+          },
+          "depth": {
+            "type": "string",
+            "values": ["0.3–0.5 m", "0.5–1 m", "1–2 m", "2–3 m", ">3 m"]
+          },
+          "scenario": {
+            "type": "string",
+            "values": ["24 小時定量降雨 650 mm"]
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["第三代；建置 2019-12-30，上架 2022-08-15"]
+          },
+          "source_row": {
+            "type": "number"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "depth_original": {
+            "type": "string",
+            "values": ["0.3-0.>3.0", "0.>3.0-1.0"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25766"
+    },
+    "wra-flood-650mm-24h-by-county": {
+      "topic": "wra-flood-650mm-24h",
+      "file": "water/flood-potential/flood-potential-650mm-24h-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://gic.wra.gov.tw/gis/gic/API/Google/DownLoad.aspx?fname=flood_650mm_24hr&filetype=SHP",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "d768ef90fc175633ba9cbd00e27a55efb5686af3f43d8e8da4bf23b6601a7978",
+      "bytes": 25806260,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25766 https://data.gov.tw/dataset/7442"
+    }
+  }
+}

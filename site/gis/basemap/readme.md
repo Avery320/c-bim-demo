@@ -1,25 +1,65 @@
-# Basemap layers
+# 底圖與地形
 
-本分類的底圖來源、資料類型與使用限制統一記錄於本文件。
+線上服務按地圖位置與縮放載入。
 
-- 服務提供者：OpenFreeMap；底圖標示保留 OpenMapTiles 與 OpenStreetMap 資料來源。
-- 取得方式：依地圖位置與縮放向服務按需載入；內容更新由服務提供者管理，不表示即時監測。
-- 分類及主題名稱由 [manifest.json](../manifest.json) 統一定義。
+## 模組定位
 
-## 主題與服務
+底圖分類保存 OpenFreeMap 樣式與 Mapterhorn DEM 的服務契約。MapLibre 串流載入底圖與高程，GIS 渲染模組管理建築、主題圖層順序及地形安裝。
 
-| 畫面名稱／資料用途 | 服務來源 | 資料類型 | 新增日期／更新方式 |
-| --- | --- | --- | --- |
-| OpenFreeMap | [OpenFreeMap](https://openfreemap.org/) | MapLibre 樣式 JSON、向量圖磚、字形與圖示；線上服務 | 動態更新（按需取得） |
+## 主要功能
 
-## OpenFreeMap
+- 提供 dark、liberty、bright、positron、fiord 五種底圖樣式。
+- 以 DEM 建立 3D 地形及 hillshade，供點線光效取得地表高程。
+- 按底圖建築高度欄位顯示建築拉伸。
 
-- 主題 ID：`openfreemap`。
-- 樣式入口：`https://tiles.openfreemap.org/styles/{style}`。
-- 目前使用：`dark`、`liberty`、`bright`、`positron`、`fiord`；樣式設定由 `src/gis/layers/MapLayerCatalog.ts` 管理。
+## 模組架構
 
-Water、Parks & land cover、Buildings、Transport、Boundaries、Place labels 是同一份底圖樣式中的顯示控制項，共用 OpenFreeMap 來源。
+### 目錄結構
 
-## 維護與使用方式
+```text
+public/gis/basemap/
+├── manifest.json                # 產生的分類資料與服務契約
+└── readme.md                    # 分類說明與維護入口
+```
 
-保留 OpenFreeMap、OpenMapTiles 與 OpenStreetMap attribution，資料授權依服務提供者原始說明。本分類沒有本地圖磚副本、圖磚下載日期、更新時間自動偵測或定時輪詢。服務設定需調整時，由開發者人工核對並提交變更；說明集中維護於本文件。
+### 資料流程
+
+```text
+basemap/catalog.mjs → 分類 manifest → GisSnapshot
+    ├──→ MapBasemapLayers → MapLibre 底圖
+    └──→ MapProjectView → MapTerrain → DEM 地形 / 陰影
+DEM 地表高程 → MapLightBeams 點線定位
+```
+
+## 主要資料
+
+| 服務        | 顯示內容                                           | 來源與授權                                                                                                                                                                                                 |
+| ----------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| OpenFreeMap | 向量底圖、字形及圖示                               | [服務與樣式](https://openfreemap.org/)；保留 OpenMapTiles／[OpenStreetMap attribution](https://www.openstreetmap.org/copyright)；[程式授權](https://github.com/hyperknot/openfreemap/blob/main/LICENSE.md) |
+| Mapterhorn  | DEM 高程圖磚，供 MapLibre 地形、陰影及光效地表定位 | [服務](https://mapterhorn.com/)；各高程來源的 [attribution 與條款](https://mapterhorn.com/attribution/)；[程式](https://github.com/mapterhorn/mapterhorn)為 BSD-3-Clause                                   |
+
+`services` 保存樣式 URL 與 `raster-dem` 來源；設定入口見 [catalog.mjs](../../../scripts/gis/basemap/catalog.mjs)。
+
+## 邊界
+
+- 本分類維護服務設定，底圖及 DEM 圖磚由外部服務提供。
+- 底圖與高程不參與主題向量篩選；DEM 為地表高程，光效及主題拉伸尺度由共用樣式管理。
+- 地形倍率由 MapProjectView.terrain 指定；光效使用 MapLibre 回傳的顯示高程。
+
+## 依賴方向
+
+箭頭表示「使用者 → 被依賴模組」。
+
+```text
+MapBasemapLayers / MapProjectView → GisSnapshot → basemap manifest
+MapLayerRenderer → MapTerrain → MapLibre
+MapLightBeams → MapLibre.queryTerrainElevation
+```
+
+共用資料契約、查詢與渲染入口見 [GIS 模組](../../../src/gis/README.md)。
+
+## 更新入口
+
+[服務定義](../../../scripts/gis/basemap/catalog.mjs) · [服務紀錄](manifest.json) · [底圖設定](../../../src/gis/layers/MapBasemapLayers.ts) · [地形顯示](../../../src/gis/README.md#3d-顯示)
+
+發布設定：`pnpm gis:refresh --catalog`。

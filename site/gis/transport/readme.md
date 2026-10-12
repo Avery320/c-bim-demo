@@ -1,69 +1,73 @@
-# 交通 Transport
+# 交通
 
-- 發布機關：內政部國土測繪中心。
-- 取得方式：官方 ZIP／SHP，依原 PRJ（TWD97 TM2 121 度）轉換為 EPSG:4326；本地固定圖資，隨專案部署。
-- 更新方式：人工執行腳本，不接入時刻表、即時車流或營運狀態。
-- 來源下載 URL、授權、雜湊與資料日期由 [manifest.json](../manifest.json) 記錄。
+國土測繪中心圖資，採政府資料開放授權條款第 1 版。
 
-## 圖層與檔案
+## 模組定位
 
-| 畫面名稱                    | 完整資料                                                         | 類型／筆數     | 新增日期／更新方式 |
-| --------------------------- | ---------------------------------------------------------------- | -------------- | ------------------ |
-| 高鐵站 THSR Stations        | [thsr-stations.geojson](thsr-stations/thsr-stations.geojson)     | 位置點／12 筆  | 2026-10-09         |
-| 臺鐵站 TRA Stations         | [tra-stations.geojson](tra-stations/tra-stations.geojson)        | 位置點／248 筆 | 2026-10-09         |
-| 臺灣鐵路 Taiwan Rail Routes | [tra-routes.geojson.gzip](tra-routes/tra-routes.geojson.gzip)    | 線段／2,607 筆 | 2026-10-09         |
-| 高鐵路線 THSR Routes        | [thsr-routes.geojson.gzip](thsr-routes/thsr-routes.geojson.gzip) | 線段／134 筆   | 2026-10-09         |
-| 國道 Highways               | [highways.geojson.gzip](highways/highways.geojson.gzip)          | 線段／6,020 筆 | 2026-10-09         |
-| 快速道路 Expressways        | [expressways.geojson.gzip](expressways/expressways.geojson.gzip) | 線段／3,093 筆 | 2026-10-09         |
+交通分類管理車站點位及軌道、道路線資料。分類轉接器處理官方欄位與道路類別，查詢、圖徵互動及點線 3D 顯示使用 GIS 共用模組。
 
-- 完整 GeoJSON 採 EPSG:4326，線資料以 gzip 壓縮；保留來源幾何與官方編號。
-- 四個路線主題各有同名 `.pmtiles` 與 `-by-county.pmtiles`，供地圖顯示及縣市裁切顯示；沿用共用產製流程。
-- 線段筆數是原始圖徵數，不是獨立路線數或營運里程。
+## 主要功能
 
-## 官方來源與涵蓋範圍
+- 將車站及路線 SHP 轉為完整向量，保留官方圖徵 ID。
+- 以同一份道路來源分出國道與快速道路。
+- 發布顯示圖磚、縣市裁切資產與完整分析資料。
 
-以下資料採政府資料開放授權條款第 1 版。
+## 模組架構
 
-| 圖層／資料 ID                | 官方說明                                            | 原始檔案與範圍                                                                   |
-| ---------------------------- | --------------------------------------------------- | -------------------------------------------------------------------------------- |
-| 高鐵站／`nlsc-thsr-stations` | [高鐵車站](https://data.gov.tw/dataset/73225)       | `MARK_高鐵車站_1101208_`；12 筆，各筆異動年月依 `YYYYMM`                         |
-| 臺鐵站／`nlsc-tra-stations`  | [臺鐵車站](https://data.gov.tw/dataset/73226)       | `MARK_臺鐵車站`；267 筆中保留名稱以「臺鐵」開頭的 248 筆，排除 19 筆林業鐵路車站 |
-| 臺灣鐵路／`nlsc-tra-routes`  | [臺灣鐵路](https://data.gov.tw/dataset/73220)       | `RAIL_1150409` 共 2,607 筆，獨立資料與控制項                                     |
-| 高鐵路線／`nlsc-thsr-routes` | [高速鐵路](https://data.gov.tw/dataset/73221)       | `HSRAIL_1130417` 共 134 筆，獨立資料與控制項                                     |
-| 國道／`nlsc-highways`        | [國省道道路中線](https://data.gov.tw/dataset/73232) | `ROAD_國省道(含快速公路)_1150409`；依 `ROADCLASS1` 選取 `HW`、`HU`               |
-| 快速道路／`nlsc-expressways` | [國省道道路中線](https://data.gov.tw/dataset/73232) | 同一份道路來源；依 `ROADCLASS1` 選取 `1E`、`RE`；本次只有 `1E`，不含市區快速道路 |
+### 目錄結構
 
-### 資料意義
+```text
+public/gis/transport/
+├── manifest.json                # 產生的分類資料與服務契約
+├── expressways/                 # 快速道路線
+├── highways/                    # 國道線
+├── thsr-routes/                 # 高鐵路線
+├── thsr-stations/               # 高鐵站點位
+├── tra-routes/                  # 臺灣鐵路線
+├── tra-stations/                # 臺鐵站點位
+└── readme.md                    # 分類說明與維護入口
+```
 
-- **車站**：保留官方名稱、編號、其他名稱、地址、電話與異動年月。臺鐵資料包含不同站區，不以名稱合併位置。
-- **軌道**：兩份原始來源各自產製完整資料、顯示圖磚與縣市圖磚，保留各自官方編號。臺灣鐵路資料包含臺鐵、林業鐵路、側線及 207 筆未命名路段；沒有名稱的路段保留幾何，不補造名稱。
-- **國道**：`HW` 為國道、`HU` 為國道附屬道路，含匝道與服務區。
-- **快速道路**：`1E` 為省道快速公路、`RE` 為市區快速道路，含匝道。本次來源未提供 `RE`；一般省道 `1W`、省道共線 `1U` 不納入。
-- 分類依[國土測繪中心圖層內容說明](https://ws.moi.gov.tw/001/Upload/407/relfile/9273/4222/72d17a08-8ae4-41ee-b387-15782e7218c9.pdf)。保留原始分類編碼及道路名稱；名稱缺值時道路顯示官方路線編號。
-- 原始檔名版本、逐筆異動年月與本專案新增日期各自保留；不將下載日期解讀為道路現況日期。
+### 資料流程
 
-## 顯示規則
+```text
+官方 SHP → transport/datasets.mjs → 欄位及道路分類
+    → 完整 GeoJSON / 顯示及區域 PMTiles
+    → MapTransportLayers → 共用篩選 → 點位 + 光效 / 原線 + 光幕
+```
 
-| 分組      | 圖層     | 顏色           | 控制項                            |
-| --------- | -------- | -------------- | --------------------------------- |
-| Locations | 高鐵站   | 橘色 `#FB923C` | 顏色 → 不透明度 → 大小 → 顯示名稱 |
-| Locations | 臺鐵站   | 藍色 `#38BDF8` | 顏色 → 不透明度 → 大小 → 顯示名稱 |
-| Routes    | 臺灣鐵路 | 白色 `#E2E8F0` | 顏色 → 不透明度 → 寬度 → 顯示名稱 |
-| Routes    | 高鐵路線 | 橘色 `#FB923C` | 顏色 → 不透明度 → 寬度 → 顯示名稱 |
-| Routes    | 國道     | 橙色 `#F59E0B` | 顏色 → 不透明度 → 寬度 → 顯示名稱 |
-| Routes    | 快速道路 | 紅色 `#F87171` | 顏色 → 不透明度 → 寬度 → 顯示名稱 |
+## 主要資料
 
-- 沿用共用點／線樣板：預設不透明度 100%、尺寸 1 倍，線寬基準 2 px；名稱預設關閉。
-- 啟用圖層且來源可用，才能操作參數。點選圖徵於右側查看官方屬性與來源。
-- 六個圖層各自管理開關、顏色、不透明度、尺寸及名稱；兩份鐵路來源不合併成同一份顯示資料。
+| 圖層     | 類型與內容                       | 官方來源                                      |
+| -------- | -------------------------------- | --------------------------------------------- |
+| 高鐵站   | 點：站址與名稱                   | [高鐵車站](https://data.gov.tw/dataset/73225) |
+| 臺鐵站   | 點：臺鐵站址，各站區分別保留     | [臺鐵車站](https://data.gov.tw/dataset/73226) |
+| 臺灣鐵路 | 線：含林業鐵路、側線及未命名線段 | [鐵路](https://data.gov.tw/dataset/73220)     |
+| 高鐵路線 | 線：高鐵軌道                     | [高速鐵路](https://data.gov.tw/dataset/73221) |
+| 國道     | 線：含附屬道路及匝道             | [道路](https://data.gov.tw/dataset/73232)     |
+| 快速道路 | 線：依官方道路分類納入           | [道路](https://data.gov.tw/dataset/73232)     |
 
-## 維護
+站點以 `code`／`name` 保存身分與名稱；路線保留道路分類、軌道類別及異動年月。點線光效與原幾何共用[尺寸與互動](../../../src/gis/README.md#3d-顯示)。
 
-| 項目                 | 位置／指令                                  |
-| -------------------- | ------------------------------------------- |
-| 原機關資料轉接       | `scripts/gis/transport/datasets.mjs`        |
-| 人工更新交通分類     | `pnpm gis:refresh --transport`              |
-| 驗證資產與來源       | `pnpm gis:verify`、`pnpm gis:verify-public` |
-| 使用本地完整資料重建 | `pnpm gis:refresh --rebuild`                |
+## 邊界
 
-國道與快速道路共用一次下載，再依官方分類分開產製。來源解析失敗、欄位或座標不符時停止發布；共用流程核對編號、筆數與檔案完整性。縣市圖磚和共用筆數索引隨交通資料一起更新。資料說明集中於本文件，主題目錄只管理資產。
+- 臺鐵站依官方名稱篩選；路線保留原始圖徵及未命名線段。
+- 國道納入 HW／HU，快速道路納入 1E／RE；來源欄位定義見轉接器。
+- 線光幕只連接同一路徑內相鄰段，保留圖徵身分與篩選造成的斷點。
+
+## 依賴方向
+
+箭頭表示「使用者 → 被依賴模組」。
+
+```text
+refresh → transport/datasets → transport/catalog / shared/source
+MapTransportLayers → vectorStyle → GisSnapshot → transport manifest
+```
+
+共用資料契約、查詢與渲染入口見 [GIS 模組](../../../src/gis/README.md)。
+
+## 更新入口
+
+[資料定義](../../../scripts/gis/transport/catalog.mjs) · [轉接器](../../../scripts/gis/transport/datasets.mjs) · [資產紀錄](manifest.json) · [圖層顯示](../../../src/gis/layers/MapTransportLayers.ts)
+
+更新：`pnpm gis:refresh --transport`。

@@ -1,34 +1,63 @@
-# 土地使用 Land Use
+# 土地使用
 
-本分類的服務來源、資料類型與使用限制統一記錄於本文件。
+國土測繪中心土地利用現況影像，保留官方配色；點選位置查詢官方分類。
 
-- 服務提供者：內政部國土測繪中心。
-- 取得方式：依地圖位置與縮放向官方服務按需載入；內容更新由服務提供者管理，不表示即時監測。
-- 畫面名稱與主題目錄由 [manifest.json](../manifest.json) 統一定義。
+## 模組定位
 
-## 主題與服務
+土地使用分類以官方影像顯示現況，並以位置查詢取得分類說明。服務契約由分類維護，外觀與識別由 GIS 共用模組處理。
 
-| 畫面名稱 | 服務來源 | 資料類型 | 新增日期／更新方式 |
-| --- | --- | --- | --- |
-| 國土利用現況調查成果圖 | [國土測繪圖資服務](https://maps.nlsc.gov.tw/)；WMTS 圖層 `LUIMAP` | PNG 圖磚／EPSG:3857；線上影像 | 動態更新（按需取得） |
-| 水利用地 | [國土測繪 WMS](https://wms.nlsc.gov.tw/wms)；圖層 `LUIMAP04` | PNG 影像／EPSG:3857；線上影像 | 動態更新（按需取得） |
+## 主要功能
 
-## 國土利用現況調查成果圖
+- 使用 WMTS 顯示國土利用現況調查成果圖。
+- 使用 WMS 顯示水利用地。
+- 透過 MapIdentify 查詢點選位置的土地利用分類。
 
-- 主題目錄：`land-use-survey/`；主題 ID：`nlsc-land-use`。
-- WMTS 圖磚：`https://wmts.nlsc.gov.tw/wmts/LUIMAP/default/GoogleMapsCompatible/{z}/{y}/{x}`。
-- 點選查詢：`https://api.nlsc.gov.tw/other/LandUsePointQuery/{longitude}/{latitude}/4326`。
+## 模組架構
 
-保留官方影像原色；服務在 z7 以下回傳空白影像。點選另使用官方座標查詢，圖磚與查詢版本可能不同。此資料不是地籍或法定使用分區，也沒有本地完整分析向量。
+### 目錄結構
 
-## 水利用地
+```text
+public/gis/land-use/
+├── manifest.json                # 產生的分類資料與服務契約
+├── land-use-survey/             # 土地利用影像服務的主題目錄
+├── water-land-use/              # 水利用地服務的主題目錄
+└── readme.md                    # 分類說明與維護入口
+```
 
-- 主題目錄：`water-land-use/`；主題 ID：`nlsc-water-land-use`。
-- WMS 入口：`https://wms.nlsc.gov.tw/wms`。
-- GetMap 參數：`VERSION=1.1.1`、`LAYERS=LUIMAP04`、`SRS=EPSG:3857`、`FORMAT=image/png`、`TRANSPARENT=TRUE`；BBOX 依畫面圖磚範圍。
+### 資料流程
 
-顯示國土利用現況中的水利利用分類，保留官方影像原色；服務在 z7 以下回傳空白影像。點選沿用官方 LandUsePointQuery 座標查詢與水利分類，不把影像當成可分析的完整面幾何。
+```text
+land-use/catalog.mjs → manifest → GisSnapshot
+    → MapLandUseLayers / rasterStyle → 官方影像 → MapLibre
+地圖點選 → MapIdentify → 官方位置查詢 → Selection Data
+```
 
-## 維護與使用方式
+## 主要資料
 
-保留官方 attribution，使用限制依原服務說明。本分類沒有本地圖磚副本、圖磚下載日期、更新時間自動偵測或定時輪詢。官方更新以服務提供者說明為準；服務設定需調整時，由開發者人工核對並提交變更。說明集中維護於本文件，不另建主題 README。
+| 圖層                   | 服務                                                     |
+| ---------------------- | -------------------------------------------------------- |
+| 國土利用現況調查成果圖 | [NLSC 圖資服務](https://maps.nlsc.gov.tw/) `LUIMAP` WMTS |
+| 水利用地               | [NLSC WMS](https://wms.nlsc.gov.tw/wms) `LUIMAP04`       |
+
+本分類在 `services` 保存 `nlsc-land-use`／`nlsc-water-land-use`；分類 manifest 的 `datasets`／`assets` 為空。
+
+## 邊界
+
+資料為現況調查，非地籍或法定使用分區。影像與位置查詢版本可能不同；本分類提供影像與位置查詢，無本地完整向量。條款依 NLSC 服務，地圖保留官方 attribution。
+
+## 依賴方向
+
+箭頭表示「使用者 → 被依賴模組」。
+
+```text
+MapLandUseLayers → rasterStyle → GisSnapshot → land-use manifest
+MapViewController → MapIdentify → NLSC 位置查詢
+```
+
+共用資料契約、查詢與渲染入口見 [GIS 模組](../../../src/gis/README.md)。
+
+## 更新入口
+
+[服務定義](../../../scripts/gis/land-use/catalog.mjs) · [服務紀錄](manifest.json) · [圖層顯示](../../../src/gis/layers/MapLandUseLayers.ts) · [位置查詢](../../../src/gis/view/MapIdentify.ts)
+
+發布設定：`pnpm gis:refresh --catalog`。

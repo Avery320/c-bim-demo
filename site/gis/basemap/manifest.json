@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 3,
+  "id": "d43e16d7e7361b411e24",
+  "label": "Basemap layers",
+  "topics": {
+    "openfreemap": {
+      "directory": "basemap/openfreemap",
+      "label": "OpenFreeMap",
+      "delivery": "online"
+    }
+  },
+  "services": {
+    "dark": {
+      "type": "style",
+      "url": "https://tiles.openfreemap.org/styles/dark"
+    },
+    "liberty": {
+      "type": "style",
+      "url": "https://tiles.openfreemap.org/styles/liberty"
+    },
+    "bright": {
+      "type": "style",
+      "url": "https://tiles.openfreemap.org/styles/bright"
+    },
+    "positron": {
+      "type": "style",
+      "url": "https://tiles.openfreemap.org/styles/positron"
+    },
+    "fiord": {
+      "type": "style",
+      "url": "https://tiles.openfreemap.org/styles/fiord"
+    },
+    "terrain": {
+      "type": "raster-dem",
+      "url": "https://tiles.mapterhorn.com/tilejson.json"
+    }
+  },
+  "datasets": {},
+  "assets": {}
+}

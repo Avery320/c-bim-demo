@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 3,
+  "id": "2563f108c8804809f621",
+  "label": "土地使用 Land Use",
+  "topics": {
+    "nlsc-land-use": {
+      "directory": "land-use/land-use-survey",
+      "label": "國土利用現況調查成果圖",
+      "delivery": "online"
+    },
+    "nlsc-water-land-use": {
+      "directory": "land-use/water-land-use",
+      "label": "水利用地",
+      "delivery": "online"
+    }
+  },
+  "services": {
+    "nlsc-land-use": {
+      "type": "raster",
+      "tiles": [
+        "https://wmts.nlsc.gov.tw/wmts/LUIMAP/default/GoogleMapsCompatible/{z}/{y}/{x}"
+      ],
+      "tileSize": 256,
+      "minzoom": 7,
+      "maxzoom": 18,
+      "attribution": "© <a href=\"https://maps.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>"
+    },
+    "nlsc-water-land-use": {
+      "type": "raster",
+      "tiles": [
+        "https://wms.nlsc.gov.tw/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=LUIMAP04&STYLES=&SRS=EPSG:3857&BBOX={bbox-epsg-3857}&WIDTH=256&HEIGHT=256&FORMAT=image/png&TRANSPARENT=TRUE"
+      ],
+      "tileSize": 256,
+      "minzoom": 7,
+      "maxzoom": 18,
+      "attribution": "© <a href=\"https://maps.nlsc.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國土測繪中心</a>"
+    }
+  },
+  "datasets": {},
+  "assets": {}
+}

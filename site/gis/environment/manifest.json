@@ -1,0 +1,1737 @@
+{
+  "schemaVersion": 3,
+  "id": "d0a1a94c3cd871071c1b",
+  "label": "環境 Environment",
+  "topics": {
+    "tw-protected-trees": {
+      "directory": "environment/protected-trees",
+      "label": "受保護樹木 Protected Trees",
+      "delivery": "local"
+    },
+    "fanca-wildlife-habitats": {
+      "directory": "environment/wildlife-habitats",
+      "label": "重要棲息環境 Wildlife Habitats",
+      "delivery": "local"
+    },
+    "nps-important-wetlands": {
+      "directory": "environment/important-wetlands",
+      "label": "重要濕地 Important Wetlands",
+      "delivery": "local"
+    },
+    "fanca-wildlife-protected-areas": {
+      "directory": "environment/wildlife-protected-areas",
+      "label": "野生動物保護區 Wildlife Protected Areas",
+      "delivery": "local"
+    },
+    "fanca-ecological-focus-areas": {
+      "directory": "environment/ecological-network-focus-areas",
+      "label": "國土生態綠網關注區域 Ecological Network Focus Areas",
+      "delivery": "local"
+    },
+    "fanca-ecological-corridors": {
+      "directory": "environment/ecological-conservation-corridors",
+      "label": "國土生態綠網區域保育軸帶 Ecological Conservation Corridors",
+      "delivery": "local"
+    },
+    "fanca-natural-vegetation": {
+      "directory": "environment/natural-vegetation",
+      "label": "天然植群圖 Natural Vegetation",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "fanca-wildlife-protected-areas": {
+      "topic": "fanca-wildlife-protected-areas",
+      "kind": "area",
+      "displayAssetId": "fanca-wildlife-protected-areas",
+      "analysisAssetId": "fanca-wildlife-protected-areas-analysis",
+      "regionalAssetId": "fanca-wildlife-protected-areas-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "農業部林業及自然保育署",
+      "attribution": "© <a href=\"https://data.moa.gov.tw/open_detail.aspx?id=162\" target=\"_blank\" rel=\"noopener noreferrer\">農業部林業及自然保育署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原始編號",
+          "query": false
+        },
+        {
+          "property": "zone",
+          "label": "原資料分區"
+        },
+        {
+          "property": "manager",
+          "label": "管理機關"
+        },
+        {
+          "property": "established_date",
+          "label": "設立日期"
+        },
+        {
+          "property": "announcement_date",
+          "label": "最新公告日期"
+        },
+        {
+          "property": "edition",
+          "label": "原資料編輯資訊"
+        },
+        {
+          "property": "area_ha",
+          "label": "官方統計面積",
+          "unit": "ha"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 6,
+        "10004": 1,
+        "10005": 1,
+        "10007": 1,
+        "10008": 1,
+        "10009": 0,
+        "10010": 2,
+        "10013": 0,
+        "10014": 3,
+        "10015": 1,
+        "10016": 0,
+        "10017": 0,
+        "10018": 5,
+        "10020": 0,
+        "63000": 3,
+        "64000": 2,
+        "65000": 3,
+        "66000": 6,
+        "67000": 2,
+        "68000": 1,
+        "09007": 2,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "fanca-wildlife-habitats": {
+      "topic": "fanca-wildlife-habitats",
+      "kind": "area",
+      "displayAssetId": "fanca-wildlife-habitats",
+      "analysisAssetId": "fanca-wildlife-habitats-analysis",
+      "regionalAssetId": "fanca-wildlife-habitats-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "農業部林業及自然保育署",
+      "attribution": "© <a href=\"https://data.moa.gov.tw/open_detail.aspx?id=156\" target=\"_blank\" rel=\"noopener noreferrer\">農業部林業及自然保育署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原始編號",
+          "query": false
+        },
+        {
+          "property": "manager",
+          "label": "管理機關"
+        },
+        {
+          "property": "established_date",
+          "label": "設立日期"
+        },
+        {
+          "property": "announcement_date",
+          "label": "最新公告日期"
+        },
+        {
+          "property": "edition",
+          "label": "原資料編輯資訊"
+        },
+        {
+          "property": "area_ha",
+          "label": "官方統計面積",
+          "unit": "ha"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 6,
+        "10004": 2,
+        "10005": 4,
+        "10007": 1,
+        "10008": 5,
+        "10009": 1,
+        "10010": 4,
+        "10013": 3,
+        "10014": 7,
+        "10015": 5,
+        "10016": 0,
+        "10017": 0,
+        "10018": 1,
+        "10020": 0,
+        "63000": 1,
+        "64000": 3,
+        "65000": 3,
+        "66000": 5,
+        "67000": 2,
+        "68000": 2,
+        "09007": 1,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "nps-important-wetlands": {
+      "topic": "nps-important-wetlands",
+      "kind": "area",
+      "displayAssetId": "nps-important-wetlands",
+      "analysisAssetId": "nps-important-wetlands-analysis",
+      "regionalAssetId": "nps-important-wetlands-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "內政部國家公園署",
+      "attribution": "© <a href=\"https://data.gov.tw/dataset/25659\" target=\"_blank\" rel=\"noopener noreferrer\">內政部國家公園署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原始編號",
+          "query": false
+        },
+        {
+          "property": "sub_name",
+          "label": "子區域名稱"
+        },
+        {
+          "property": "level",
+          "label": "官方級別"
+        },
+        {
+          "property": "county",
+          "label": "原資料縣市"
+        },
+        {
+          "property": "area_ha",
+          "label": "官方統計面積",
+          "unit": "ha"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 7,
+        "10004": 4,
+        "10005": 2,
+        "10007": 1,
+        "10008": 1,
+        "10009": 2,
+        "10010": 9,
+        "10013": 7,
+        "10014": 5,
+        "10015": 2,
+        "10016": 2,
+        "10017": 1,
+        "10018": 1,
+        "10020": 0,
+        "63000": 4,
+        "64000": 10,
+        "65000": 11,
+        "66000": 3,
+        "67000": 23,
+        "68000": 3,
+        "09007": 1,
+        "09020": 1
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "fanca-ecological-focus-areas": {
+      "topic": "fanca-ecological-focus-areas",
+      "kind": "area",
+      "displayAssetId": "fanca-ecological-focus-areas",
+      "analysisAssetId": "fanca-ecological-focus-areas-analysis",
+      "regionalAssetId": "fanca-ecological-focus-areas-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "農業部林業及自然保育署",
+      "attribution": "© <a href=\"https://www.forest.gov.tw/0004767\" target=\"_blank\" rel=\"noopener noreferrer\">農業部林業及自然保育署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原始編號",
+          "query": false
+        },
+        {
+          "property": "zone",
+          "label": "綠網分區"
+        },
+        {
+          "property": "location",
+          "label": "涵蓋範圍"
+        },
+        {
+          "property": "habitat",
+          "label": "關注棲地"
+        },
+        {
+          "property": "plants",
+          "label": "關注植物"
+        },
+        {
+          "property": "animals",
+          "label": "關注動物"
+        },
+        {
+          "property": "purpose",
+          "label": "指認目的"
+        },
+        {
+          "property": "area_ha",
+          "label": "官方統計面積",
+          "unit": "ha"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 6,
+        "10004": 6,
+        "10005": 4,
+        "10007": 4,
+        "10008": 5,
+        "10009": 6,
+        "10010": 8,
+        "10013": 6,
+        "10014": 10,
+        "10015": 4,
+        "10016": 1,
+        "10017": 4,
+        "10018": 2,
+        "10020": 1,
+        "63000": 2,
+        "64000": 5,
+        "65000": 7,
+        "66000": 7,
+        "67000": 5,
+        "68000": 6,
+        "09007": 1,
+        "09020": 1
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "fanca-ecological-corridors": {
+      "topic": "fanca-ecological-corridors",
+      "kind": "area",
+      "displayAssetId": "fanca-ecological-corridors",
+      "analysisAssetId": "fanca-ecological-corridors-analysis",
+      "regionalAssetId": "fanca-ecological-corridors-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "農業部林業及自然保育署",
+      "attribution": "© <a href=\"https://www.forest.gov.tw/0004767\" target=\"_blank\" rel=\"noopener noreferrer\">農業部林業及自然保育署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "原始編號",
+          "query": false
+        },
+        {
+          "property": "category",
+          "label": "軸帶類別"
+        },
+        {
+          "property": "zone",
+          "label": "綠網分區"
+        },
+        {
+          "property": "manager",
+          "label": "原資料分署"
+        },
+        {
+          "property": "administrative_area",
+          "label": "涉及行政區"
+        },
+        {
+          "property": "habitat",
+          "label": "關注棲地"
+        },
+        {
+          "property": "strategy",
+          "label": "推動策略"
+        },
+        {
+          "property": "edition",
+          "label": "原資料編輯資訊"
+        },
+        {
+          "property": "area_ha",
+          "label": "官方統計面積",
+          "unit": "ha"
+        },
+        {
+          "property": "data_version",
+          "label": "原資料版本",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 3,
+        "10004": 3,
+        "10005": 5,
+        "10007": 5,
+        "10008": 7,
+        "10009": 6,
+        "10010": 6,
+        "10013": 5,
+        "10014": 8,
+        "10015": 6,
+        "10016": 1,
+        "10017": 0,
+        "10018": 2,
+        "10020": 1,
+        "63000": 1,
+        "64000": 7,
+        "65000": 4,
+        "66000": 8,
+        "67000": 6,
+        "68000": 3,
+        "09007": 1,
+        "09020": 1
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "fanca-natural-vegetation": {
+      "topic": "fanca-natural-vegetation",
+      "kind": "area",
+      "displayAssetId": "fanca-natural-vegetation",
+      "analysisAssetId": "fanca-natural-vegetation-analysis",
+      "regionalAssetId": "fanca-natural-vegetation-by-county",
+      "tileLayer": "areas",
+      "countyFilter": true,
+      "sourceName": "農業部林業及自然保育署",
+      "attribution": "© <a href=\"https://data.gov.tw/dataset/9930\" target=\"_blank\" rel=\"noopener noreferrer\">農業部林業及自然保育署</a>",
+      "titleProperty": "name",
+      "titleLabel": "原始植群名稱",
+      "fields": [
+        {
+          "property": "formation_code",
+          "label": "原始植群編碼"
+        },
+        {
+          "property": "class_name",
+          "label": "群系綱"
+        },
+        {
+          "property": "class_original",
+          "label": "原始群系綱",
+          "query": false
+        },
+        {
+          "property": "subclass_original",
+          "label": "原始群系亞綱"
+        },
+        {
+          "property": "altitude_zone",
+          "label": "原始海拔帶代碼"
+        },
+        {
+          "property": "original_code",
+          "label": "原始數值代碼"
+        },
+        {
+          "property": "area_ha",
+          "label": "原圖資面積",
+          "unit": "ha"
+        },
+        {
+          "property": "source_row",
+          "label": "原檔列號",
+          "query": false
+        },
+        {
+          "property": "data_version",
+          "label": "資料年代",
+          "query": false
+        },
+        {
+          "property": "geometry_processing",
+          "label": "幾何處理",
+          "query": false
+        }
+      ],
+      "countyCounts": {
+        "10002": 2582,
+        "10004": 1655,
+        "10005": 1764,
+        "10007": 0,
+        "10008": 12963,
+        "10009": 223,
+        "10010": 4004,
+        "10013": 2295,
+        "10014": 5259,
+        "10015": 7541,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 0,
+        "64000": 4903,
+        "65000": 1572,
+        "66000": 3126,
+        "67000": 2841,
+        "68000": 705,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "taipei-protected-trees": {
+      "topic": "tw-protected-trees",
+      "kind": "point",
+      "displayAssetId": "taipei-protected-trees",
+      "analysisAssetId": "taipei-protected-trees",
+      "countyFilter": true,
+      "sourceName": "臺北市政府文化局",
+      "attribution": "© 臺北市政府文化局／新北市政府農業局／高雄市政府農業局",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方樹木編號"
+        },
+        {
+          "property": "county",
+          "label": "來源縣市"
+        },
+        {
+          "property": "scientific_name",
+          "label": "學名"
+        },
+        {
+          "property": "address",
+          "label": "位置"
+        },
+        {
+          "property": "land_parcel",
+          "label": "地段地號"
+        },
+        {
+          "property": "manager",
+          "label": "管理單位"
+        },
+        {
+          "property": "diameter_m",
+          "label": "原資料胸徑",
+          "unit": "m"
+        },
+        {
+          "property": "girth_m",
+          "label": "原資料胸圍",
+          "unit": "m"
+        },
+        {
+          "property": "estimated_age",
+          "label": "推估樹齡",
+          "unit": "年"
+        },
+        {
+          "property": "status",
+          "label": "列管狀態"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 0,
+        "10005": 0,
+        "10007": 0,
+        "10008": 0,
+        "10009": 0,
+        "10010": 0,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 3873,
+        "64000": 0,
+        "65000": 1,
+        "66000": 0,
+        "67000": 0,
+        "68000": 0,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "new-taipei-protected-trees": {
+      "topic": "tw-protected-trees",
+      "kind": "point",
+      "displayAssetId": "new-taipei-protected-trees",
+      "analysisAssetId": "new-taipei-protected-trees",
+      "countyFilter": true,
+      "sourceName": "新北市政府農業局",
+      "attribution": "© 臺北市政府文化局／新北市政府農業局／高雄市政府農業局",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方樹木編號"
+        },
+        {
+          "property": "county",
+          "label": "來源縣市"
+        },
+        {
+          "property": "scientific_name",
+          "label": "學名"
+        },
+        {
+          "property": "address",
+          "label": "位置"
+        },
+        {
+          "property": "land_parcel",
+          "label": "地段地號"
+        },
+        {
+          "property": "manager",
+          "label": "管理單位"
+        },
+        {
+          "property": "diameter_m",
+          "label": "原資料胸徑",
+          "unit": "m"
+        },
+        {
+          "property": "girth_m",
+          "label": "原資料胸圍",
+          "unit": "m"
+        },
+        {
+          "property": "estimated_age",
+          "label": "推估樹齡",
+          "unit": "年"
+        },
+        {
+          "property": "status",
+          "label": "列管狀態"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 0,
+        "10005": 0,
+        "10007": 0,
+        "10008": 0,
+        "10009": 0,
+        "10010": 0,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 1,
+        "64000": 0,
+        "65000": 881,
+        "66000": 0,
+        "67000": 0,
+        "68000": 0,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    },
+    "kaohsiung-protected-trees": {
+      "topic": "tw-protected-trees",
+      "kind": "point",
+      "displayAssetId": "kaohsiung-protected-trees",
+      "analysisAssetId": "kaohsiung-protected-trees",
+      "countyFilter": true,
+      "sourceName": "高雄市政府農業局",
+      "attribution": "© 臺北市政府文化局／新北市政府農業局／高雄市政府農業局",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "官方樹木編號"
+        },
+        {
+          "property": "county",
+          "label": "來源縣市"
+        },
+        {
+          "property": "scientific_name",
+          "label": "學名"
+        },
+        {
+          "property": "address",
+          "label": "位置"
+        },
+        {
+          "property": "land_parcel",
+          "label": "地段地號"
+        },
+        {
+          "property": "manager",
+          "label": "管理單位"
+        },
+        {
+          "property": "diameter_m",
+          "label": "原資料胸徑",
+          "unit": "m"
+        },
+        {
+          "property": "girth_m",
+          "label": "原資料胸圍",
+          "unit": "m"
+        },
+        {
+          "property": "estimated_age",
+          "label": "推估樹齡",
+          "unit": "年"
+        },
+        {
+          "property": "status",
+          "label": "列管狀態"
+        }
+      ],
+      "countyCounts": {
+        "10002": 0,
+        "10004": 0,
+        "10005": 0,
+        "10007": 0,
+        "10008": 0,
+        "10009": 0,
+        "10010": 0,
+        "10013": 0,
+        "10014": 0,
+        "10015": 0,
+        "10016": 0,
+        "10017": 0,
+        "10018": 0,
+        "10020": 0,
+        "63000": 0,
+        "64000": 717,
+        "65000": 0,
+        "66000": 0,
+        "67000": 0,
+        "68000": 0,
+        "09007": 0,
+        "09020": 0
+      },
+      "countyBoundarySha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e"
+    }
+  },
+  "assets": {
+    "fanca-wildlife-protected-areas": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+      "importedAt": "2026-10-09",
+      "sha256": "a4b13e506b433a704b28998c2a6a4964ad768a59b09ed5b046883d435a554f89",
+      "bytes": 244804,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162"
+    },
+    "fanca-wildlife-protected-areas-analysis": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+      "importedAt": "2026-10-09",
+      "sha256": "49484e00d68f9544e5d7575d2938f26ac2493ff2ff2c8579d10d166ffe3d6122",
+      "bytes": 433041,
+      "featureCount": 32,
+      "analysis": {
+        "datasetId": "fanca-wildlife-protected-areas-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "WR02",
+              "WR03",
+              "WR04",
+              "WR05",
+              "WR07",
+              "WR09",
+              "WR10",
+              "WR11",
+              "WR13",
+              "WR14",
+              "WR15",
+              "WR16",
+              "WR17",
+              "WR18",
+              "WR19",
+              "WR21"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "台南縣曾文溪口北岸黑面琵鷺動物保護區",
+              "台東縣海端鄉新武呂溪魚類保護區",
+              "大肚溪口野生動物保護區",
+              "宜蘭縣雙連埤野生動物保護區",
+              "新竹市濱海野生動物保護區",
+              "桃園高榮野生動物保護區",
+              "櫻花鉤吻鮭野生動物保護區",
+              "無尾港水鳥保護區",
+              "玉里野生動物保護區",
+              "翡翠水庫食蛇龜野生動物保護區",
+              "臺北市野雁保護區",
+              "臺南市四草野生動物保護區",
+              "蘭陽溪口水鳥保護區",
+              "馬祖列島雌光螢野生動物保護區",
+              "高美野生動物保護區",
+              "高雄市那瑪夏區楠梓仙溪野生動物保護區"
+            ]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "宜蘭縣政府",
+              "新竹市政府",
+              "林業及自然保育署宜蘭分署",
+              "林業及自然保育署花蓮分署",
+              "桃園市政府",
+              "臺中市政府",
+              "臺中市政府及彰化縣政府",
+              "臺北市政府",
+              "臺南市政府",
+              "臺東縣政府",
+              "連江縣政府",
+              "高雄市政府"
+            ]
+          },
+          "established_date": {
+            "type": "string",
+            "values": [
+              "1993-05-26",
+              "1993-09-24",
+              "1993-11-19",
+              "1994-11-30",
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2001-06-08",
+              "2002-11-01",
+              "2003-11-07",
+              "2004-09-29",
+              "2012-03-03",
+              "2022-05-03",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "announcement_date": {
+            "type": "string",
+            "values": [
+              "1996-09-16",
+              "1997-10-01",
+              "1998-12-04",
+              "2000-01-27",
+              "2002-11-01",
+              "2003-11-07",
+              "2007-09-29",
+              "2012-06-22",
+              "2015-06-23",
+              "2017-03-21",
+              "2019-04-23",
+              "2020-04-22",
+              "2022-05-03",
+              "2025-06-30",
+              "2025-07-11",
+              "2025-07-22"
+            ]
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "-",
+              "109年10月19日更新",
+              "111年5月12日更新",
+              "111年8月16日更新",
+              "111年8月16日更新(面積待修正公告)",
+              "114年6月30日更新",
+              "114年7月11日更新",
+              "114年7月22日更新",
+              "（待更新）"
+            ]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "核心保育區",
+              "核心區",
+              "永續利用區",
+              "緩衝區",
+              "緩衝區A",
+              "緩衝區B",
+              "緩衝區C"
+            ]
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["陸域野生動物保護區1141"]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162"
+    },
+    "fanca-wildlife-protected-areas-by-county": {
+      "topic": "fanca-wildlife-protected-areas",
+      "file": "environment/wildlife-protected-areas/wildlife-protected-areas-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?id=162&FileType=DataMore&RID=59756",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "d251dd807a1050f0d0a2d54b044876e3b4f96601c337dea5a7204c2860227ab2",
+      "bytes": 274944,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=162 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-wildlife-habitats": {
+      "topic": "fanca-wildlife-habitats",
+      "file": "environment/wildlife-habitats/wildlife-habitats.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://data.moa.gov.tw/GetOpenDataFile.aspx?id=156&FileType=DataMore&RID=83443",
+      "importedAt": "2026-10-09",
+      "sha256": "776bff0ff9ac84ac95c17bc064749e6a36e1fd3a56c9c4e87158f33610446005",
+      "bytes": 909402,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=156"
+    },
+    "fanca-wildlife-habitats-analysis": {
+      "topic": "fanca-wildlife-habitats",
+      "file": "environment/wildlife-habitats/wildlife-habitats.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://data.moa.gov.tw/GetOpenDataFile.aspx?id=156&FileType=DataMore&RID=83443",
+      "importedAt": "2026-10-09",
+      "sha256": "cbbb28123a5dc8b597b916766cf3dc2de53aff3de7a238965a9eccbc83a31718",
+      "bytes": 2278348,
+      "featureCount": 33,
+      "analysis": {
+        "datasetId": "fanca-wildlife-habitats-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "嘉義縣政府、林業及自然保育署嘉義分署",
+              "宜蘭縣政府",
+              "宜蘭縣政府、林業及自然保育署宜蘭分署",
+              "新竹市政府",
+              "林業及自然保育署南投、花蓮分署",
+              "林業及自然保育署南投分署",
+              "林業及自然保育署嘉義分署",
+              "林業及自然保育署宜蘭分署",
+              "林業及自然保育署屏東分署",
+              "林業及自然保育署新竹、宜蘭分署",
+              "林業及自然保育署新竹分署",
+              "林業及自然保育署臺中分署",
+              "林業及自然保育署臺東、花蓮分署",
+              "林業及自然保育署臺東分署",
+              "林業及自然保育署花蓮分署",
+              "桃園市政府",
+              "臺中市政府",
+              "臺中市政府及彰化縣政府",
+              "臺北市政府",
+              "臺南市政府",
+              "臺東縣政府",
+              "連江縣政府",
+              "雲林縣政府、林業及自然保育署南投分署",
+              "高雄市政府"
+            ]
+          },
+          "established_date": {
+            "type": "string",
+            "values": [
+              "1995-09-23",
+              "1996-07-11",
+              "1997-07-31",
+              "1998-03-19",
+              "1998-04-07",
+              "1998-05-22",
+              "1998-11-19",
+              "2000-01-27",
+              "2000-02-15",
+              "2000-10-19",
+              "2001-03-13",
+              "2001-05-17",
+              "2001-06-08",
+              "2002-10-14",
+              "2003-10-23",
+              "2004-09-09",
+              "2006-12-22",
+              "2008-11-28",
+              "2009-04-16",
+              "2011-12-21",
+              "2013-12-10",
+              "2022-05-03"
+            ]
+          },
+          "announcement_date": {
+            "type": "string",
+            "values": [
+              "1995-09-23",
+              "1996-07-11",
+              "1997-07-31",
+              "1998-03-19",
+              "1998-11-19",
+              "2000-01-27",
+              "2000-02-15",
+              "2000-10-19",
+              "2001-03-13",
+              "2001-05-17",
+              "2002-10-14",
+              "2004-09-09",
+              "2006-12-22",
+              "2008-11-28",
+              "2009-04-16",
+              "2011-12-21",
+              "2015-06-10",
+              "2022-05-03",
+              "2025-02-07",
+              "2025-05-05",
+              "2026-04-27"
+            ]
+          },
+          "edition": {
+            "type": "string",
+            "values": [
+              "-",
+              "109年10月20日更新",
+              "110年1月8日更新",
+              "111年5月12日更新",
+              "111年8月16日更新",
+              "114年2月7日更新",
+              "114年5月5日更新",
+              "115年4月27日更新",
+              "（待更新）"
+            ]
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["陸域野生動物重要棲息環境1151"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=156"
+    },
+    "fanca-wildlife-habitats-by-county": {
+      "topic": "fanca-wildlife-habitats",
+      "file": "environment/wildlife-habitats/wildlife-habitats-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://data.moa.gov.tw/GetOpenDataFile.aspx?id=156&FileType=DataMore&RID=83443",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "53df19213d4653da1f1d477236ba49b0eb3b5aa7beb9080caff5faf6378609ec",
+      "bytes": 1115861,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.moa.gov.tw/open_detail.aspx?id=156 https://data.gov.tw/dataset/7442"
+    },
+    "nps-important-wetlands": {
+      "topic": "nps-important-wetlands",
+      "file": "environment/important-wetlands/important-wetlands.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.tgos.tw:443/MDE/VirtualDir_TC/Product/c5894f87-68f4-4f88-ab32-12d58cc9fd35/重要濕地1150109(更新龍鑾潭).zip",
+      "importedAt": "2026-10-09",
+      "sha256": "da2e0714b2736da23b9edcbac122f8ace3bf49f6ae0cc5277503e56daab73338",
+      "bytes": 527945,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25659"
+    },
+    "nps-important-wetlands-analysis": {
+      "topic": "nps-important-wetlands",
+      "file": "environment/important-wetlands/important-wetlands.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw:443/MDE/VirtualDir_TC/Product/c5894f87-68f4-4f88-ab32-12d58cc9fd35/重要濕地1150109(更新龍鑾潭).zip",
+      "importedAt": "2026-10-09",
+      "sha256": "4ade775192a8025bc20d5e47f5b0187cc483c4237c1d917fde873e187867d293",
+      "bytes": 796250,
+      "featureCount": 89,
+      "analysis": {
+        "datasetId": "nps-important-wetlands-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "level": {
+            "type": "string",
+            "values": ["國家級", "國際級", "地方級", "暫定地方級"]
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義縣",
+              "嘉義縣、臺南市",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "澎湖縣",
+              "臺中市",
+              "臺中市、彰化縣",
+              "臺北市",
+              "臺北市、新北市",
+              "臺南市",
+              "臺東縣",
+              "花蓮縣",
+              "苗栗縣",
+              "連江縣",
+              "金門縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["重要濕地1150109（更新龍鑾潭）"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "sub_name": {
+            "type": "string",
+            "values": [
+              "上茄苳埤",
+              "九芎埤",
+              "五股重要濕地",
+              "冷水埤",
+              "加走埤",
+              "北部埤",
+              "城林人工重要濕地",
+              "埤寮埤",
+              "大漢新店重要濕地",
+              "大潭埤",
+              "太平圳埤",
+              "將軍埤",
+              "打鳥埤人工重要濕地",
+              "挖子尾重要濕地",
+              "新海人工重要濕地",
+              "林初埤",
+              "洗布埤",
+              "浮洲人工重要濕地",
+              "淡水河紅樹林重要濕地",
+              "烏樹林埤",
+              "牛挑灣埤",
+              "番子田埤(葫蘆埤)(北)",
+              "番子田埤(葫蘆埤)(南)",
+              "臺北港北堤重要濕地",
+              "菁埔埤",
+              "關渡重要濕地",
+              "馬稠後蓮埤",
+              "馬稠後頂埤",
+              "鹽水埤下游埤池",
+              "鹿角溪人工重要濕地"
+            ]
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25659"
+    },
+    "nps-important-wetlands-by-county": {
+      "topic": "nps-important-wetlands",
+      "file": "environment/important-wetlands/important-wetlands-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.tgos.tw:443/MDE/VirtualDir_TC/Product/c5894f87-68f4-4f88-ab32-12d58cc9fd35/重要濕地1150109(更新龍鑾潭).zip",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "2861f65a1d809a7ff3e3b29f9baa22f14ea64d3a54f656c34e31011027144e17",
+      "bytes": 574746,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/25659 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-ecological-focus-areas": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.forest.gov.tw/file/79024",
+      "importedAt": "2026-10-09",
+      "sha256": "b02f27b58e6fc7963e5bcbc97aaf7ea7961490a5c3173a9a90f86399724afdd6",
+      "bytes": 7570970,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-ecological-focus-areas-analysis": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.forest.gov.tw/file/79024",
+      "importedAt": "2026-10-09",
+      "sha256": "cb1af3c5a2615739edeb223153c775ff2463c8cd4e0c107254514d6e164f52c5",
+      "bytes": 12239854,
+      "featureCount": 44,
+      "analysis": {
+        "datasetId": "fanca-ecological-focus-areas-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北部",
+              "南部",
+              "東北部",
+              "東部",
+              "西北部",
+              "西南部",
+              "西部",
+              "離島"
+            ]
+          },
+          "location": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "animals": {
+            "type": "string"
+          },
+          "plants": {
+            "type": "string"
+          },
+          "purpose": {
+            "type": "string"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["國土綠網關注區域1092"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-ecological-focus-areas-by-county": {
+      "topic": "fanca-ecological-focus-areas",
+      "file": "environment/ecological-network-focus-areas/ecological-network-focus-areas-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.forest.gov.tw/file/79024",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "9c802e773cc063fa523464f4d08bfb1799a422dc4acc016b5e4d92f384542454",
+      "bytes": 8032231,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-ecological-corridors": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://www.forest.gov.tw/file/89332",
+      "importedAt": "2026-10-09",
+      "sha256": "7354bcd9c0694d19feea4309e34af510c58ec91f8cc40b95cbab16009a407a7e",
+      "bytes": 4426123,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-ecological-corridors-analysis": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://www.forest.gov.tw/file/89332",
+      "importedAt": "2026-10-09",
+      "sha256": "c57eae77fdc05eb0ce2221187d8edec20906c193fd142b0554f98822a6a2d97c",
+      "bytes": 3395139,
+      "featureCount": 45,
+      "analysis": {
+        "datasetId": "fanca-ecological-corridors-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "code": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string",
+            "values": ["丘陵", "平原", "海岸", "溪流", "離島"]
+          },
+          "zone": {
+            "type": "string",
+            "values": [
+              "北區",
+              "南區",
+              "東北區",
+              "東區",
+              "西北區",
+              "西區",
+              "西南區",
+              "西南區、南區",
+              "離島"
+            ]
+          },
+          "manager": {
+            "type": "string",
+            "values": [
+              "南投分署",
+              "嘉義分署",
+              "宜蘭分署",
+              "屏東分署",
+              "新竹分署",
+              "臺中分署",
+              "臺東分署",
+              "花蓮分署"
+            ]
+          },
+          "administrative_area": {
+            "type": "string"
+          },
+          "habitat": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "edition": {
+            "type": "string",
+            "values": ["112年5月11日更新", "113年6月18日更新"]
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["國土生態綠網區域保育軸帶1141"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767"
+    },
+    "fanca-ecological-corridors-by-county": {
+      "topic": "fanca-ecological-corridors",
+      "file": "environment/ecological-conservation-corridors/ecological-conservation-corridors-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://www.forest.gov.tw/file/89332",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "686e64853140c1376f80cb39fcb1f48e1d257409604f3265f7bdd3d7dbcbf838",
+      "bytes": 4771638,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://www.forest.gov.tw/0004767 https://data.gov.tw/dataset/7442"
+    },
+    "fanca-natural-vegetation": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+      "importedAt": "2026-10-09",
+      "sha256": "c5fb8a2ec05ea41f93a483f1e0485cb976d61ec0b9129b3e7dfea31f27316a5e",
+      "bytes": 68342923,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930"
+    },
+    "fanca-natural-vegetation-analysis": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation.geojson.gzip",
+      "format": "geojson",
+      "encoding": "gzip",
+      "crs": "EPSG:4326",
+      "source": "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+      "importedAt": "2026-10-09",
+      "sha256": "b5ac8ee84749f45b91924af6a46acbb391935cd8bbfb777c6109b64cf5ae4467",
+      "bytes": 90027923,
+      "featureCount": 49953,
+      "analysis": {
+        "datasetId": "fanca-natural-vegetation-analysis",
+        "geometryTypes": ["Polygon", "MultiPolygon"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "formation_code": {
+            "type": "string"
+          },
+          "class_code": {
+            "type": "string",
+            "values": ["A", "F", "G", "H", "S", "X"]
+          },
+          "class_name": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "森林",
+              "灌叢",
+              "特殊棲地植生",
+              "草本植群"
+            ]
+          },
+          "class_original": {
+            "type": "string",
+            "values": ["人工植", "其他", "森林", "灌叢", "特殊棲", "草本植"]
+          },
+          "subclass_original": {
+            "type": "string",
+            "values": [
+              "人工植生",
+              "其他",
+              "天然裸露地",
+              "岩壁與碎石",
+              "海岸",
+              "草本植群",
+              "針葉林",
+              "針闊葉混淆",
+              "針闊葉灌叢",
+              "闊葉林"
+            ]
+          },
+          "altitude_zone": {
+            "type": "number"
+          },
+          "original_code": {
+            "type": "number"
+          },
+          "area_ha": {
+            "type": "number"
+          },
+          "source_row": {
+            "type": "number"
+          },
+          "data_version": {
+            "type": "string",
+            "values": ["2003–2009 年調查；2013 年局部修正"]
+          },
+          "_featureId": {
+            "type": "string"
+          },
+          "geometry_processing": {
+            "type": "string",
+            "values": ["GEOS MakeValid (linework)，保留面成分"]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930"
+    },
+    "fanca-natural-vegetation-by-county": {
+      "topic": "fanca-natural-vegetation",
+      "file": "environment/natural-vegetation/natural-vegetation-by-county.pmtiles",
+      "format": "pmtiles",
+      "crs": "EPSG:3857",
+      "source": [
+        "https://data.moa.gov.tw/OpenData/GetOpenDataFile.aspx?FileType=SHP&RID=1908&id=153",
+        "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip"
+      ],
+      "importedAt": "2026-10-09",
+      "sha256": "09d13957f4c1bed1dae64e63a6963832fc0c7493af9264d109133a6aaffd75ea",
+      "bytes": 69519872,
+      "featureId": "properties._featureId",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/9930 https://data.gov.tw/dataset/7442"
+    },
+    "taipei-protected-trees": {
+      "topic": "tw-protected-trees",
+      "file": "environment/protected-trees/protected-trees-taipei.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=a7c2db0d-8b6e-42b2-bdcc-ae69a6797e1d",
+      "importedAt": "2026-10-09",
+      "sha256": "bc4e8854af8e7286f5d53cb8ab5d529d8740ef056419143c86a65c07c112a21d",
+      "bytes": 1624204,
+      "featureCount": 3874,
+      "analysis": {
+        "datasetId": "taipei-protected-trees",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": ["臺北市"]
+          },
+          "scientific_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "manager": {
+            "type": "string"
+          },
+          "diameter_m": {
+            "type": "number"
+          },
+          "girth_m": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/121274"
+    },
+    "new-taipei-protected-trees": {
+      "topic": "tw-protected-trees",
+      "file": "environment/protected-trees/protected-trees-new-taipei.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://data.ntpc.gov.tw/api/datasets/dfd0dd0f-564b-461f-88fd-4493a87387b9/csv/file",
+      "importedAt": "2026-10-09",
+      "sha256": "d9b15b66cd8b1e02dbd67f021e40e2ad2cd1f51cd3992f9abe02296325f63ca4",
+      "bytes": 413804,
+      "featureCount": 883,
+      "omittedFeatures": [
+        {
+          "id": "107-金-12",
+          "reason": "原始 TWD97 座標不合理：252480, 121601；不猜測修補"
+        },
+        {
+          "id": "107-土-52",
+          "reason": "原始 TWD97 座標不合理：2932283, 2761640；不猜測修補"
+        },
+        {
+          "id": "110-莊-36",
+          "reason": "原始 TWD97 座標不合理：250227, 1214401；不猜測修補"
+        }
+      ],
+      "analysis": {
+        "datasetId": "new-taipei-protected-trees",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": ["新北市"]
+          },
+          "scientific_name": {
+            "type": "string"
+          },
+          "address": {
+            "type": "string"
+          },
+          "land_parcel": {
+            "type": "string"
+          },
+          "diameter_m": {
+            "type": "number"
+          },
+          "girth_m": {
+            "type": "number"
+          },
+          "estimated_age": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "values": ["公告列管"]
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/125615"
+    },
+    "kaohsiung-protected-trees": {
+      "topic": "tw-protected-trees",
+      "file": "environment/protected-trees/protected-trees-kaohsiung.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://openapi.kcg.gov.tw/Api/Service/Get/914625f5-7800-4502-9573-1e2331d16bc5",
+      "importedAt": "2026-10-09",
+      "sha256": "aca3cae279b7863089aef08dd4bd888890ad07edf8302b4c3b2cb8e22484eb0d",
+      "bytes": 230568,
+      "featureCount": 717,
+      "analysis": {
+        "datasetId": "kaohsiung-protected-trees",
+        "geometryTypes": ["Point"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": ["高雄市"]
+          },
+          "address": {
+            "type": "string"
+          },
+          "land_parcel": {
+            "type": "string"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/163742"
+    }
+  }
+}

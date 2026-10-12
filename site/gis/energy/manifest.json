@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 3,
+  "id": "8166ae79a9f2e8a7a1e3",
+  "label": "再生能源 Energy",
+  "topics": {
+    "moeaea-offshore-wind-farms": {
+      "directory": "energy/offshore-wind-farms",
+      "label": "離岸風場 Offshore Wind",
+      "delivery": "local"
+    },
+    "moeaea-offshore-wind-potential": {
+      "directory": "energy/offshore-wind-potential",
+      "label": "風電潛力場址 Wind Plan",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "moeaea-offshore-wind-farms": {
+      "topic": "moeaea-offshore-wind-farms",
+      "kind": "area",
+      "displayAssetId": "moeaea-offshore-wind-farms",
+      "analysisAssetId": "moeaea-offshore-wind-farms",
+      "countyFilter": false,
+      "sourceName": "經濟部能源署",
+      "attribution": "© <a href=\"https://www.moeaea.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部能源署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "company",
+          "label": "公司名稱"
+        },
+        {
+          "property": "status",
+          "label": "資料類型"
+        },
+        {
+          "property": "corner_count",
+          "label": "原始角點數"
+        }
+      ]
+    },
+    "moeaea-offshore-wind-potential": {
+      "topic": "moeaea-offshore-wind-potential",
+      "kind": "area",
+      "displayAssetId": "moeaea-offshore-wind-potential",
+      "analysisAssetId": "moeaea-offshore-wind-potential",
+      "countyFilter": false,
+      "sourceName": "經濟部能源署",
+      "attribution": "© <a href=\"https://www.moeaea.gov.tw/\" target=\"_blank\" rel=\"noopener noreferrer\">經濟部能源署</a>",
+      "titleProperty": "name",
+      "fields": [
+        {
+          "property": "code",
+          "label": "場址編號"
+        },
+        {
+          "property": "county",
+          "label": "原資料參考縣市"
+        },
+        {
+          "property": "area_km2",
+          "label": "官方統計面積",
+          "unit": "km²"
+        },
+        {
+          "property": "status",
+          "label": "資料類型"
+        }
+      ]
+    }
+  },
+  "assets": {
+    "moeaea-offshore-wind-farms": {
+      "topic": "moeaea-offshore-wind-farms",
+      "file": "energy/offshore-wind-farms/offshore-wind-farms.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://www.moeaea.gov.tw/ECW/populace/Law/wHandLawsList_File.ashx?kind=6&id=5476",
+      "importedAt": "2026-10-09",
+      "sha256": "27a06d6ea292ced32c154dd0ce21cd5c79cfbaaef23b62009722fec66bc81b3c",
+      "bytes": 18002,
+      "featureCount": 22,
+      "omittedFeatures": [
+        {
+          "id": "渢妙離岸風力發電股份有限公司:台中渢妙離岸風力發電計畫第一期",
+          "reason": "原始角點依表列順序閉合會自相交；未提供區塊連接方式，場址面待確認"
+        }
+      ],
+      "analysis": {
+        "datasetId": "moeaea-offshore-wind-farms",
+        "geometryTypes": ["Polygon"],
+        "fields": {
+          "name": {
+            "type": "string",
+            "values": [
+              "中能離岸風力發電開發計畫",
+              "允能雲林離岸風力發電廠興建計畫",
+              "台中渢妙二號離岸風力發電計畫",
+              "台電離岸風力第一期計畫",
+              "台電離岸風力第二期計畫",
+              "大彰化東南離岸風力發電計畫",
+              "大彰化西北離岸風力發電計畫",
+              "大彰化西南離岸風力發電計畫",
+              "彰化又德離岸風力發電廠",
+              "彰化彰芳離岸風力發電開發計畫第一期",
+              "彰化彰芳離岸風力發電開發計畫第二期",
+              "彰化西島離岸風力發電開發計畫",
+              "海峽離岸風力發電計畫",
+              "海廣離岸風力發電計畫",
+              "海洋示範風場計畫",
+              "海盛苗栗離岸風力發電計畫三",
+              "海能離岸風力發電計畫",
+              "海鼎二風力發電計畫",
+              "海龍三號離岸風力發電計畫",
+              "海龍二號離岸風力發電計畫(競價)",
+              "海龍二號離岸風力發電計畫(遴選)",
+              "環洋離岸風力發電計畫"
+            ]
+          },
+          "company": {
+            "type": "string",
+            "values": [
+              "中能發電股份有限公司",
+              "允能風力發電股份有限公司",
+              "又德風力發電股份有限公司",
+              "台灣環洋風力能源股份有限公司籌備處",
+              "台灣電力股份有限公司",
+              "大彰化東南離岸風力發電股份有限公司",
+              "大彰化西北離岸風力發電股份有限公司",
+              "大彰化西南離岸風力發電股份有限公司",
+              "彰芳風力發電股份有限公司",
+              "海峽風電股份有限公司",
+              "海廣發電股份有限公司籌備處",
+              "海洋風力發電股份有限公司",
+              "海盛發電股份有限公司",
+              "海能風力發電股份有限公司",
+              "海鼎二風力發電股份有限公司",
+              "海龍三號風電股份有限公司",
+              "海龍二號風電股份有限公司",
+              "渢妙二號離岸風力發電股份有限公司籌備處",
+              "西島風力發電股份有限公司"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "values": ["已取得有效設置同意證明或籌設許可"]
+          },
+          "corner_count": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "中能發電股份有限公司:中能離岸風力發電開發計畫",
+              "允能風力發電股份有限公司:允能雲林離岸風力發電廠興建計畫",
+              "又德風力發電股份有限公司:彰化又德離岸風力發電廠",
+              "台灣環洋風力能源股份有限公司籌備處:環洋離岸風力發電計畫",
+              "台灣電力股份有限公司:台電離岸風力第一期計畫",
+              "台灣電力股份有限公司:台電離岸風力第二期計畫",
+              "大彰化東南離岸風力發電股份有限公司:大彰化東南離岸風力發電計畫",
+              "大彰化西北離岸風力發電股份有限公司:大彰化西北離岸風力發電計畫",
+              "大彰化西南離岸風力發電股份有限公司:大彰化西南離岸風力發電計畫",
+              "彰芳風力發電股份有限公司:彰化彰芳離岸風力發電開發計畫第一期",
+              "彰芳風力發電股份有限公司:彰化彰芳離岸風力發電開發計畫第二期",
+              "海峽風電股份有限公司:海峽離岸風力發電計畫",
+              "海廣發電股份有限公司籌備處:海廣離岸風力發電計畫",
+              "海洋風力發電股份有限公司:海洋示範風場計畫",
+              "海盛發電股份有限公司:海盛苗栗離岸風力發電計畫三",
+              "海能風力發電股份有限公司:海能離岸風力發電計畫",
+              "海鼎二風力發電股份有限公司:海鼎二風力發電計畫",
+              "海龍三號風電股份有限公司:海龍三號離岸風力發電計畫",
+              "海龍二號風電股份有限公司:海龍二號離岸風力發電計畫(競價)",
+              "海龍二號風電股份有限公司:海龍二號離岸風力發電計畫(遴選)",
+              "渢妙二號離岸風力發電股份有限公司籌備處:台中渢妙二號離岸風力發電計畫",
+              "西島風力發電股份有限公司:彰化西島離岸風力發電開發計畫"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://nodass.namr.gov.tw/dataInfo?metadataid=9"
+    },
+    "moeaea-offshore-wind-potential": {
+      "topic": "moeaea-offshore-wind-potential",
+      "file": "energy/offshore-wind-potential/offshore-wind-potential.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://www.moeaea.gov.tw/ECW/populace/opendata/wHandOpenData_File.ashx?set_id=145",
+      "importedAt": "2026-10-09",
+      "sha256": "a77cedaea94f9ade692347cb9676ac57b58b2415fbc8b46db990cd4e698b0712",
+      "bytes": 17093,
+      "featureCount": 33,
+      "omittedFeatures": [
+        {
+          "id": "3",
+          "reason": "原始角點依表列順序閉合會自相交；未提供區塊連接方式，場址面待確認"
+        },
+        {
+          "id": "7",
+          "reason": "原始角點依表列順序閉合會自相交；未提供區塊連接方式，場址面待確認"
+        },
+        {
+          "id": "36",
+          "reason": "原始角點依表列順序閉合會自相交；未提供區塊連接方式，場址面待確認"
+        }
+      ],
+      "analysis": {
+        "datasetId": "moeaea-offshore-wind-potential",
+        "geometryTypes": ["Polygon"],
+        "fields": {
+          "name": {
+            "type": "string"
+          },
+          "code": {
+            "type": "string"
+          },
+          "county": {
+            "type": "string",
+            "values": [
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "桃園市",
+              "臺中市",
+              "臺南市",
+              "苗栗縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "area_km2": {
+            "type": "number"
+          },
+          "status": {
+            "type": "string",
+            "values": ["潛力場址"]
+          },
+          "corner_count": {
+            "type": "number"
+          },
+          "_featureId": {
+            "type": "string"
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/36681"
+    }
+  }
+}

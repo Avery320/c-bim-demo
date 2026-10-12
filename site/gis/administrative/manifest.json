@@ -1,0 +1,141 @@
+{
+  "schemaVersion": 3,
+  "id": "8729efeb417eaee20617",
+  "label": "行政區 Administrative",
+  "topics": {
+    "tw-admin-counties": {
+      "directory": "administrative/counties",
+      "label": "縣市界 Counties",
+      "delivery": "local"
+    }
+  },
+  "datasets": {
+    "tw-admin-counties": {
+      "topic": "tw-admin-counties",
+      "kind": "area",
+      "displayAssetId": "tw-admin-counties",
+      "analysisAssetId": "tw-admin-counties",
+      "countyFilter": false,
+      "titleProperty": "name",
+      "titleLabel": "縣市",
+      "fields": []
+    }
+  },
+  "assets": {
+    "tw-admin-index": {
+      "topic": "tw-admin-counties",
+      "file": "administrative/counties/index.json",
+      "format": "admin-index",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "34cf3dd508c307dc5b94e325b457a1b0f34b2439f23fa0eeafe48340ff522c23",
+      "bytes": 2702,
+      "featureCount": 22,
+      "featureId": "none",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/7442"
+    },
+    "tw-admin-counties": {
+      "topic": "tw-admin-counties",
+      "file": "administrative/counties/counties.geojson",
+      "format": "geojson",
+      "crs": "EPSG:4326",
+      "source": "https://www.tgos.tw/tgos/VirtualDir/Product/1cd4f4c9-6b01-4cf9-bf6c-23a73aa17d24/%E7%9B%B4%E8%BD%84%E5%B8%82%E3%80%81%E7%B8%A3%28%E5%B8%82%29%E7%95%8C%E7%B7%9A1140318.zip",
+      "importedAt": "2026-10-09",
+      "sha256": "cf0659f9c55e871489ebd3ca9b0b6cf3ee0089164fe0117ebea91672dec6d46e",
+      "bytes": 13097048,
+      "featureCount": 22,
+      "analysis": {
+        "datasetId": "tw-admin-counties",
+        "geometryTypes": ["MultiPolygon", "Polygon"],
+        "fields": {
+          "code": {
+            "type": "string",
+            "values": [
+              "09007",
+              "09020",
+              "10002",
+              "10004",
+              "10005",
+              "10007",
+              "10008",
+              "10009",
+              "10010",
+              "10013",
+              "10014",
+              "10015",
+              "10016",
+              "10017",
+              "10018",
+              "10020",
+              "63000",
+              "64000",
+              "65000",
+              "66000",
+              "67000",
+              "68000"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "values": [
+              "南投縣",
+              "嘉義市",
+              "嘉義縣",
+              "基隆市",
+              "宜蘭縣",
+              "屏東縣",
+              "彰化縣",
+              "新北市",
+              "新竹市",
+              "新竹縣",
+              "桃園市",
+              "澎湖縣",
+              "臺中市",
+              "臺北市",
+              "臺南市",
+              "臺東縣",
+              "花蓮縣",
+              "苗栗縣",
+              "連江縣",
+              "金門縣",
+              "雲林縣",
+              "高雄市"
+            ]
+          },
+          "_featureId": {
+            "type": "string",
+            "values": [
+              "09007",
+              "09020",
+              "10002",
+              "10004",
+              "10005",
+              "10007",
+              "10008",
+              "10009",
+              "10010",
+              "10013",
+              "10014",
+              "10015",
+              "10016",
+              "10017",
+              "10018",
+              "10020",
+              "63000",
+              "64000",
+              "65000",
+              "66000",
+              "67000",
+              "68000"
+            ]
+          }
+        }
+      },
+      "featureId": "feature.id",
+      "licenseStatus": "approved",
+      "rightsEvidence": "https://data.gov.tw/dataset/7442"
+    }
+  }
+}
