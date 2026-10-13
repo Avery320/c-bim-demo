@@ -35,7 +35,7 @@ DEM 地表高程 → MapLightBeams 點線定位
 
 | 服務        | 顯示內容                                           | 來源與授權                                                                                                                                                                                                 |
 | ----------- | -------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| OpenFreeMap | 向量底圖、字形及圖示                               | [服務與樣式](https://openfreemap.org/)；保留 OpenMapTiles／[OpenStreetMap attribution](https://www.openstreetmap.org/copyright)；[程式授權](https://github.com/hyperknot/openfreemap/blob/main/LICENSE.md) |
+| OpenFreeMap | 向量底圖、字形及圖示                               | [服務與樣式](https://openfreemap.org/)；[OpenMapTiles](https://openmaptiles.org/)／[OpenStreetMap](https://www.openstreetmap.org/copyright)；[程式授權](https://github.com/hyperknot/openfreemap/blob/main/LICENSE.md) |
 | Mapterhorn  | DEM 高程圖磚，供 MapLibre 地形、陰影及光效地表定位 | [服務](https://mapterhorn.com/)；各高程來源的 [attribution 與條款](https://mapterhorn.com/attribution/)；[程式](https://github.com/mapterhorn/mapterhorn)為 BSD-3-Clause                                   |
 
 `services` 保存樣式 URL 與 `raster-dem` 來源；設定入口見 [catalog.mjs](../../../scripts/gis/basemap/catalog.mjs)。
