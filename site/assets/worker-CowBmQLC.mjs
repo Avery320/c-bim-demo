@@ -30203,13 +30203,7 @@ class RaycastController {
     const worldPlanes = clipPlanes && clipPlanes.length ? [...frustum.planes, ...clipPlanes] : frustum.planes;
     const geomCache = /* @__PURE__ */ new Map();
     const result = [];
-    const start = performance.now();
-    let exceeded = false;
     for (const sampleId of sampleIds) {
-      if (exceeded) {
-        result.push(sampleId);
-        continue;
-      }
       const box = this._boxes.get(sampleId);
       if (CameraUtils.isIncluded(box, worldPlanes)) {
         result.push(sampleId);
@@ -30224,7 +30218,6 @@ class RaycastController {
       )) {
         result.push(sampleId);
       }
-      exceeded = this.isTimeExceeded(start);
     }
     for (const [, geometries] of geomCache) {
       for (const geometry of geometries) {
@@ -30250,12 +30243,15 @@ class RaycastController {
       return !fullyInside;
     const localPlanes = this.toLocalPlanes(frustum, clipPlanes, this._temp.m2);
     if (fullyInside) {
+      const selectionPlanes = this.toLocalPlanes(frustum, [], this._temp.m2);
+      const clips = this.transform(clipPlanes, this._temp.m2);
+      let visible = false;
       for (const geometry of geometries) {
-        if (!this.geometryFullyInside(geometry, localPlanes)) {
-          return false;
-        }
+        const included = this.geometryFullyInside(geometry, selectionPlanes, clips);
+        if (included === false) return false;
+        visible ||= included === true;
       }
-      return true;
+      return visible;
     }
     for (const geometry of geometries) {
       if (this.geometryIntersectsPlanes(geometry, localPlanes)) {
@@ -30264,20 +30260,26 @@ class RaycastController {
     }
     return false;
   }
-  // True only if every vertex of the geometry is inside every plane.
-  geometryFullyInside(geometry, planes) {
-    const position = geometry.getAttribute("position");
-    const array = position.array;
-    const vertex = this._temp.v1;
-    for (let i = 0; i < array.length; i += 3) {
-      vertex.set(array[i], array[i + 1], array[i + 2]);
-      for (const plane of planes) {
-        if (plane.distanceToPoint(vertex) < 0) {
-          return false;
+  // Test window containment after clipping each triangle to the visible section.
+  geometryFullyInside(geometry, selectionPlanes, clipPlanes) {
+    let visible = false;
+    let outside = false;
+    geometry.boundsTree.shapecast({
+      intersectsBounds: (box) => CameraUtils.collides(box, clipPlanes),
+      intersectsTriangle: (triangle) => {
+        let polygon = [triangle.a, triangle.b, triangle.c];
+        for (const plane of clipPlanes) {
+          polygon = this.clipPolygonByPlane(polygon, plane);
+          if (!polygon.length) return false;
         }
+        visible = true;
+        outside = polygon.some((vertex) =>
+          selectionPlanes.some((plane) => plane.distanceToPoint(vertex) < -1e-7)
+        );
+        return outside;
       }
-    }
-    return true;
+    });
+    return outside ? false : visible ? true : undefined;
   }
   buildSampleGeometries(sampleId) {
     const geometries = [];
@@ -82250,7 +82252,10 @@ class ThreadRaycaster extends ThreadController {
     const model = this.thread.getModel(input.modelId);
     const frustum = MultithreadingHelper.frustum(input.frustum);
     const fullyIncluded = input.fullyIncluded;
-    const localIds = model.rectangleRaycast(frustum, fullyIncluded);
+    const planes = input.clippingPlanes === undefined
+      ? model.view?.clippingPlanes ?? []
+      : MultithreadingHelper.planeSet(input.clippingPlanes);
+    const localIds = model.raycaster.rectangleRaycast(frustum, planes, fullyIncluded);
     input.localIds = localIds;
   }
   raycastWithSnap(input) {
